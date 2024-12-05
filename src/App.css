@@ -1,38 +1,274 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Hero Section Styling */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Set the height to 70% of the viewport height */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 120%; /* Make sure the image covers the entire height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1; /* Ensures content is above the image */
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 120px;
+  padding: 2rem; /* Added padding for spacing */
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent black background */
+  border-radius: 10px; /* Rounded edges for better aesthetics */
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.author {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn.primary {
+  background-color: orange;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn.secondary {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.personalized-focus-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* Space between image section and text section */
+  margin: 3rem auto;
+  max-width: 1200px;
 }
+
+.focus-images {
+  display: flex;
+  gap: 1rem; /* Space between the images */
+  max-width: 60%; /* Limit image section width */
+}
+
+.focus-images .left-image {
+  flex: 2; /* Larger image on the left */
+  height: 520px; /* Full-length height */
+  object-fit: cover;
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+.focus-images .right-images {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  gap: 1rem;
+  flex: 1; /* Take up half the space of the left image */
+}
+
+.focus-images .right-images img {
+  width: 100%;
+  height: calc(500px / 2); /* Half the height of the left image */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.focus-content {
+  max-width: 35%; /* Ensure the text takes up less space */
+}
+
+.focus-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: navy;
+}
+
+.focus-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.focus-content .btn.primary {
+  padding: 0.8rem 1.5rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.focus-content .btn.primary:hover {
+  background-color: darkorange;
+}
+
+.carousel-section{
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Set the height to 70% of the viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+
+.carousel-image {
+  width: 100%;
+  height: 120%; /* Make sure the image covers the entire height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* filter: blur(5px);
+  -webkit-filter: blur(5px); */
+  background: #51627E(0, 0, 0, 0.5);
+}
+
+.carousel-content {
+  z-index: 1; /* Ensures content is above the image */
+  /* max-width: 100vh; */
+  width: 100%; /* Full width of the carousel */
+  height: 100%; /* Full height of the carousel */
+  margin: auto;
+  margin-bottom: 120px;
+  padding: 2rem; /* Added padding for spacing */
+  color: white;
+  text-align: center;
+  background: rgba(22, 36, 103, 0.5); /* Adds a semi-transparent black background */
+  border-radius: 10px; /* Rounded edges for better aesthetics */
+}
+
+.testSeries-section{
+  position: relative;
+  width: 100%;
+  height: 35vh; /* Set the height to 70% of the viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.testSeries-image {
+  width: 100%;
+  height: 120%; /* Make sure the image covers the entire height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* filter: blur(5px);
+  -webkit-filter: blur(5px); */
+  background: #51627E(0, 0, 0, 0.5);
+}
+
+.testSeries-content {
+  z-index: 1; /* Ensures content is above the image */
+  /* max-width: 100vh; */
+  width: 100%; 
+  height: 100%; 
+  margin: auto;
+  margin-bottom: 120px;
+  padding: 2rem; /* Added padding for spacing */
+  color: white;
+  text-align: center;
+  background: rgba(22, 36, 103, 0.5); /* Adds a semi-transparent black background */
+  border-radius: 10px; /* Rounded edges for better aesthetics */
+}
+
+.founders-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.title {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.founders {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.founder {
+  max-width: 250px;
+  text-align: center;
+}
+
+.founder-image {
+  width: 260px; /* Ensures consistent width */
+  height: 400px; /* Ensures consistent height */
+  object-fit: cover; /* Makes the image fit nicely */
+  border-radius: 8px; /* Adds slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.founder-name {
+  font-size: 30px;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.founder-role {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.founder-desc {
+  font-size: 17px;
+  color: #666;
+}
+

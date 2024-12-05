@@ -1,0 +1,14 @@
+/* footer.css or any other CSS file */
+footer {
+    background-color: white; /* Change from blue to white */
+    color: black; /* You may also want to change text color to make it readable on white background */
+  }
+  
+  footer a {
+    color: black; /* Change link color to something visible on white background */
+  }
+  
+  footer a:hover {
+    color: #007bff; /* Optional: Add hover effect if you want */
+  }
+  
