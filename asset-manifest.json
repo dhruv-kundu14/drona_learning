@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/drona_learning/static/css/main.018c06fa.css",
-    "main.js": "/drona_learning/static/js/main.bd5d6c2c.js",
+    "main.js": "/drona_learning/static/js/main.1a85b1cd.js",
     "static/media/fa-solid-900.ttf": "/drona_learning/static/media/fa-solid-900.ad1782c70927ebc5bc87.ttf",
     "static/media/fa-brands-400.ttf": "/drona_learning/static/media/fa-brands-400.26b80c8830bebf340211.ttf",
     "static/media/fa-solid-900.woff2": "/drona_learning/static/media/fa-solid-900.83a538a018a9e44b023a.woff2",
@@ -12,10 +12,10 @@
     "static/media/fa-v4compatibility.woff2": "/drona_learning/static/media/fa-v4compatibility.c3ea317a0f10f201597f.woff2",
     "index.html": "/drona_learning/index.html",
     "main.018c06fa.css.map": "/drona_learning/static/css/main.018c06fa.css.map",
-    "main.bd5d6c2c.js.map": "/drona_learning/static/js/main.bd5d6c2c.js.map"
+    "main.1a85b1cd.js.map": "/drona_learning/static/js/main.1a85b1cd.js.map"
   },
   "entrypoints": [
     "static/css/main.018c06fa.css",
-    "static/js/main.bd5d6c2c.js"
+    "static/js/main.1a85b1cd.js"
   ]
 }
