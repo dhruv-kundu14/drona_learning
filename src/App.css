@@ -2,7 +2,7 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: 80vh; /* Set the height to 70% of the viewport height */
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,8 +12,8 @@
 
 .hero-image {
   width: 100%;
-  height: 120%; /* Make sure the image covers the entire height */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
+  height: 120%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -21,15 +21,15 @@
 }
 
 .hero-content {
-  z-index: 1; /* Ensures content is above the image */
+  z-index: 1;
   max-width: 800px;
   margin: auto;
   margin-bottom: 120px;
-  padding: 2rem; /* Added padding for spacing */
+  padding: 2rem;
   color: white;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent black background */
-  border-radius: 10px; /* Rounded edges for better aesthetics */
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .hero-content h1 {
@@ -78,34 +78,84 @@ blockquote {
   color: black;
   border: 2px solid black;
 }
+/* Responsive styles */
+@media (max-width: 1024px) { /* Tablets and smaller desktops */
+  .hero-section {
+    height: 60vh; /* Slightly smaller height */
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) { /* Tablets and mobile screens */
+  .hero-section {
+    height: 50vh; /* Even smaller height for phones */
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) { /* Small mobile screens */
+  .hero-section {
+    height: 40vh; /* Further reduce height */
+  }
+
+  .hero-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+}
 
 .personalized-focus-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem; /* Space between image section and text section */
+  gap: 2rem;
   margin: 3rem auto;
   max-width: 1200px;
 }
 
 .focus-images {
   display: flex;
-  gap: 1rem; /* Space between the images */
-  max-width: 60%; /* Limit image section width */
+  gap: 1rem;
+  max-width: 60%;
 }
 
 .focus-images .left-image {
-  flex: 2; /* Larger image on the left */
-  height: 520px; /* Full-length height */
+  flex: 2;
+  height: 520px;
   object-fit: cover;
-  border-radius: 8px; /* Optional: rounded corners */
+  border-radius: 8px;
 }
 
 .focus-images .right-images {
   display: flex;
-  flex-direction: column; /* Stack vertically */
+  flex-direction: column;
   gap: 1rem;
-  flex: 1; /* Take up half the space of the left image */
+  flex: 1;
 }
 
 .focus-images .right-images img {
@@ -146,10 +196,57 @@ blockquote {
   background-color: darkorange;
 }
 
-.carousel-section{
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .personalized-focus-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .focus-images {
+    max-width: 100%;
+  }
+
+  .focus-images .left-image,
+  .focus-images .right-images img {
+    height: 400px;
+  }
+
+  .focus-content {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) { 
+  .focus-images .left-image,
+  .focus-images .right-images img {
+    height: 300px;
+  }
+
+  .focus-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .focus-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) { /* Small mobile screens */
+  .focus-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .focus-content p {
+    font-size: 0.9rem;
+  }
+}
+
+
+.carousel-section {
   position: relative;
   width: 100%;
-  height: 70vh; /* Set the height to 70% of the viewport height */
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,39 +254,72 @@ blockquote {
   overflow: hidden;
 }
 
-
-
 .carousel-image {
   width: 100%;
-  height: 120%; /* Make sure the image covers the entire height */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
+  height: 120%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  /* filter: blur(5px);
-  -webkit-filter: blur(5px); */
-  background: #51627E(0, 0, 0, 0.5);
 }
 
 .carousel-content {
-  z-index: 1; /* Ensures content is above the image */
-  /* max-width: 100vh; */
-  width: 100%; /* Full width of the carousel */
-  height: 100%; /* Full height of the carousel */
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   margin: auto;
   margin-bottom: 120px;
-  padding: 2rem; /* Added padding for spacing */
+  padding: 2rem;
   color: white;
   text-align: center;
-  background: rgba(22, 36, 103, 0.5); /* Adds a semi-transparent black background */
-  border-radius: 10px; /* Rounded edges for better aesthetics */
+  background: rgba(22, 36, 103, 0.5);
+  border-radius: 10px;
 }
 
-.testSeries-section{
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .carousel-section {
+    height: 50vh;
+  }
+
+  .carousel-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-section {
+    height: 40vh;
+  }
+
+  .carousel-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-section {
+    height: 30vh;
+  }
+
+  .carousel-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-content p {
+    font-size: 0.9rem;
+  }
+}
+
+.testSeries-section {
   position: relative;
   width: 100%;
-  height: 35vh; /* Set the height to 70% of the viewport height */
+  height: 35vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,29 +329,64 @@ blockquote {
 
 .testSeries-image {
   width: 100%;
-  height: 120%; /* Make sure the image covers the entire height */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
+  height: 120%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  /* filter: blur(5px);
-  -webkit-filter: blur(5px); */
-  background: #51627E(0, 0, 0, 0.5);
 }
 
 .testSeries-content {
-  z-index: 1; /* Ensures content is above the image */
-  /* max-width: 100vh; */
-  width: 100%; 
-  height: 100%; 
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   margin: auto;
   margin-bottom: 120px;
-  padding: 2rem; /* Added padding for spacing */
+  padding: 2rem;
   color: white;
   text-align: center;
-  background: rgba(22, 36, 103, 0.5); /* Adds a semi-transparent black background */
-  border-radius: 10px; /* Rounded edges for better aesthetics */
+  background: rgba(22, 36, 103, 0.5);
+  border-radius: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .testSeries-section {
+    height: 30vh;
+  }
+
+  .testSeries-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .testSeries-section {
+    height: 25vh;
+  }
+
+  .testSeries-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .testSeries-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testSeries-section {
+    height: 20vh;
+  }
+
+  .testSeries-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .testSeries-content p {
+    font-size: 0.9rem;
+  }
 }
 
 .founders-container {
@@ -248,10 +413,10 @@ blockquote {
 }
 
 .founder-image {
-  width: 260px; /* Ensures consistent width */
-  height: 400px; /* Ensures consistent height */
-  object-fit: cover; /* Makes the image fit nicely */
-  border-radius: 8px; /* Adds slightly rounded corners */
+  width: 260px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -272,3 +437,70 @@ blockquote {
   color: #666;
 }
 
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .founders {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .founder-image {
+    width: 220px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .founders {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .founder-image {
+    width: 200px;
+    height: 300px;
+  }
+
+  .founder-name {
+    font-size: 1.5rem;
+  }
+
+  .founder-role {
+    font-size: 1rem;
+  }
+
+  .founder-desc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .founder-image {
+    width: 180px;
+    height: 260px;
+  }
+
+  .founder-name {
+    font-size: 1.2rem;
+  }
+
+  .founder-role {
+    font-size: 0.9rem;
+  }
+
+  .founder-desc {
+    font-size: 0.9rem;
+  }
+}

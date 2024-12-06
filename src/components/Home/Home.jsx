@@ -115,7 +115,7 @@ const HeroSection = () => {
           </p>
         </div>
       </div>
-    </div>
+      </div>
     
       <Testimonial/>
       <Footer/>
