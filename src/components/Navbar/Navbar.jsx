@@ -14,7 +14,7 @@ const Navbar = () => {
         <h1>Drona Learning Solution</h1>
       </div>
       <ul className="navbar-links">
-        <li><Link to="/home">Home</Link></li>  
+        <li><Link to="/drona_learning">Home</Link></li>  
         <li><Link to="/about">About</Link></li> 
         <li><Link to="/courses">Courses</Link></li> 
         <li><Link to="/selflearning">SelfLearning</Link></li>
