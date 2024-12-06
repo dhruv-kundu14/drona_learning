@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src ="/Icons/CompanyLogo/Drona.jpeg"
+        <img src ="https://dhruv-kundu14.github.io/drona_learning/Icons/CompanyLogo/Drona.jpeg"
          alt="Drona Learning Solutions"
          style={{ width: 70, marginRight: 10, cursor: "pointer" }}/>
       </div>

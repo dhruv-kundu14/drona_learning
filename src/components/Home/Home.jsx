@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* Hero Section */}
       <div className="hero-section">
         <img
-          src="/Icons/home/hero-image.jpg" // Ensure this path points to the public folder
+          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero-image.jpg" // Ensure this path points to the public folder
           alt="Background"
           className="hero-image"
         />
@@ -34,15 +34,15 @@ const HeroSection = () => {
         <div className="focus-images">
           {/* Left image (full-length) */}
           <img
-            src="/Icons/home/about1.jpg"
+            src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about1.jpg"
             alt="Student studying"
             className="left-image"
           />
 
           {/* Right images (stacked vertically) */}
           <div className="right-images">
-            <img src="/Icons/home/about2.jpg" alt="Library" />
-            <img src="/Icons/home/about3.jpg" alt="Teamwork" />
+            <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about2.jpg" alt="Library" />
+            <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about3.jpg" alt="Teamwork" />
           </div>
         </div>
         <div className="focus-content">
@@ -60,7 +60,7 @@ const HeroSection = () => {
       {/* carousel */}
       <div className="carousel-section">
         <img
-          src="/Icons/home/carousel.jpg" // Ensure this path points to the public folder
+          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/carousel.jpg" // Ensure this path points to the public folder
           alt="Background"
           className="carousel-image"
         />
@@ -75,7 +75,7 @@ const HeroSection = () => {
       {/* carousel */}
       <div className="testSeries-section">
         <img
-          src="/Icons/home/structure.jpg" // Ensure this path points to the public folder
+          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg" // Ensure this path points to the public folder
           alt="Background"
           className="testSeries-image"
         />
@@ -94,7 +94,7 @@ const HeroSection = () => {
       <div className="founders">
         <div className="founder">
           <img
-            src="/Icons/Founders/founder1.jpg"
+            src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder1.jpg"
             alt="Dr. Abhilasha"
             className="founder-image"
           />
@@ -104,7 +104,7 @@ const HeroSection = () => {
         </div>
         <div className="founder">
           <img
-            src="/Icons/Founders/founder2.jpeg"
+            src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder2.jpeg"
             alt="Dr. Jayanti Datta"
             className="founder-image"
           />

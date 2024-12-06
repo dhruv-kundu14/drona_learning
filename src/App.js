@@ -17,7 +17,7 @@ const App = () => {
     <Router>
       <Navbar />  {/* Navbar with links */}
       <Routes>  {/* Replace Switch with Routes */}
-        <Route path="/home" element={<Home />} />
+        <Route path="/drona_learning" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/selflearning" element={<SelfLearning />} />
         <Route path="/about" element={<AboutUs />} />
