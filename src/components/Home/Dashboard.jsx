@@ -6,7 +6,7 @@ const Dashboard = () => {
     {
       title: "Extremely Passionate Team",
       icon: <img 
-      src="/Icons/Detail/like.png" 
+      src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/like.png" 
       alt="Shopping bag icon" 
       style={{
         width: '50px',
@@ -23,7 +23,7 @@ const Dashboard = () => {
     {
       title: "Highly Educated Teachers",
       icon: <img 
-        src="/Icons/Detail/education.png"
+        src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/education.png"
         alt="shield secuirty"
         style={{
           width: '50px',
@@ -40,7 +40,7 @@ const Dashboard = () => {
     {
       title: "Widely Experienced Faculty",
       icon: <img 
-        src="/Icons/Detail/globe.png"
+        src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/globe.png"
         alt="shield secuirty"
         style={{
           width: '50px',
@@ -57,7 +57,7 @@ const Dashboard = () => {
     {
       title: "Unique Teaching Methodology",
       icon: <img 
-        src="/Icons/Detail/presentation.png"
+        src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/presentation.png"
         alt="shield secuirty"
         style={{
           width: '50px',
@@ -74,7 +74,7 @@ const Dashboard = () => {
     {
       title: "Personalized Attention on Students",
       icon: <img 
-        src="/Icons/Detail/dart-board.png"
+        src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/dart-board.png"
         alt="shield secuirty"
         style={{
           width: '50px',
@@ -91,7 +91,7 @@ const Dashboard = () => {
     {
       title: "Self Learning",
       icon: <img 
-        src="/Icons/Detail/reading-book.png"
+        src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/reading-book.png"
         alt="shield secuirty"
         style={{
           width: '50px',
