@@ -1,8 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SelfLearning.css";
 import Footer from "../Footer/Footer";
+import axios from "axios";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import CSS for Toastify
+
 
 const SelfLearning = () => {
+
+  const [formData, setFormData] = useState({
+    parentName: '',
+    studentName: '',
+    email: '',
+    phone: '',
+    grade: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    // Grade mapping for string grades like "VI", "VII", etc.
+    const gradeMapping = {
+      "VI": 6,
+      "VII": 7,
+      "VIII": 8,
+      "IX": 9,
+      "X": 10,
+      "XI": 11,
+      "XII": 12,
+    };
+  
+    // Convert grade to numeric if it's a string grade like "VI", "VII", etc.
+    const numericGrade = gradeMapping[formData.grade.toUpperCase()] || formData.grade;
+  
+    const updatedFormData = {
+      ...formData,
+      grade: numericGrade, // Update grade with numeric value
+    };
+  
+    console.log("Form Data:", updatedFormData);
+  
+    try {
+      const response = await axios.post(
+        'https://drona-backend-61ib.onrender.com/common-backend/api/registerData',
+        updatedFormData
+      );
+      console.log('Response:', response.data);
+  
+      // Show success message using Toastify
+      toast.success('Data Registered Successfully', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } catch (error) {
+      console.error('Error in registration:', error.response || error);
+  
+      // Show error message using Toastify
+      toast.error('Failed to register user. Please try again.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  };
+  
+
   return (
     <>
       <div className="self-container">
@@ -26,7 +105,7 @@ const SelfLearning = () => {
           </p>
           <p>
             In our endeavor to promote self-learning amongst the students, Drona
-            Learning academy is pleased to introduce the<b> SELF LEARNING
+            Learning academy is pleased to introduce the <b>SELF LEARNING
             PROGRAM(SLP)</b> in Mathematics.
           </p>
           <b>Benefits of this Program</b>
@@ -93,38 +172,79 @@ const SelfLearning = () => {
           </div>
         </div>
       </div>
+
       <div className="self-contact">
         <h1>Get in touch !!</h1>
       </div>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-component">
           <label htmlFor="parent-name">Parent Name *</label>
-          <input type="text" id="parent-name" name="parent-name" required />
+          <input
+            type="text"
+            id="parent-name"
+            name="parentName"
+            value={formData.parentName}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="form-component">
           <label htmlFor="student-name">Student Name *</label>
-          <input type="text" id="student-name" name="student-name" required />
+          <input
+            type="text"
+            id="student-name"
+            name="studentName"
+            value={formData.studentName}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="form-component">
           <label htmlFor="email">Email *</label>
-          <input type="email" id="email" name="email" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="form-component">
           <label htmlFor="phone">Phone *</label>
-          <input type="tel" id="phone" name="phone" required />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="form-component">
           <label htmlFor="grade">Grade *</label>
-          <input type="text" id="grade" name="grade" required />
+          <input
+            type="text"
+            id="grade"
+            name="grade"
+            value={formData.grade}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="form-component">
           <label htmlFor="message">Message</label>
-          <textarea id="message" name="message"></textarea>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+          />
         </div>
         <button type="submit">Submit</button>
       </form>
-
+      <ToastContainer />
       <Footer />
     </>
   );

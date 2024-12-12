@@ -1,30 +1,62 @@
-import React from "react";
-import Footer from "../Footer/Footer"
-import Dashboard from "../Home/Dashboard"
-import Testimonial from "../Home/Testimonial"
+import React, { useEffect } from "react";
+import Footer from "../Footer/Footer";
+import Dashboard from "../Home/Dashboard";
+import Testimonial from "../Home/Testimonial";
 import "../../App.css"; // Ensure this path is correct for your CSS file
+// import { Link } from "react-router-dom";
 
 const HeroSection = () => {
+  useEffect(() => {
+    // Function to handle scroll event
+    const handleScroll = () => {
+      const scrollY = window.scrollY; // Get scroll position
+      const imageContainer = document.querySelector(".image-container");
+
+      // Calculate opacity based on scroll position
+      const opacity = 1 - scrollY / 500; // Adjust 500 to control how fast it disappears
+      if (opacity >= 0) {
+        imageContainer.style.opacity = opacity; // Set opacity dynamically
+      }
+    };
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
       <div className="hero-section">
-        <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero-image.jpg" // Ensure this path points to the public folder
-          alt="Background"
-          className="hero-image"
-        />
-        <div className="hero-content">
-          <h1>One stop platform for all learning needs.</h1>
-          <p>Live | Interactive | Personalized</p>
-          <blockquote>
-            Tell me and I forget, teach me and I may remember, involve me and I
-            learn.
-            <span className="author"> - Benjamin Franklin</span>
-          </blockquote>
-          <div className="hero-buttons">
-            <button className="btn primary">Sign Up For Free Demo</button>
-            <button className="btn secondary">Enquire Now</button>
+        <div className="wrapper">
+          <div className="image-container"></div>
+          <div class="hero-container">
+            <div class="text-section">
+              <h3>LEARN HOW TO LEARN</h3>
+              <h1>Enhance the Self-Learning Capability in Your Child</h1>
+              <p>
+                We don’t know what professional skills our children would need
+                10 years from now, but we do know that the
+                <strong> ability to learn new skills quickly</strong> and
+                <strong> apply those skills</strong> will stay relevant forever.
+                Let us join hands and prepare them to be 
+                <strong> future-ready</strong>.
+              </p>
+              <button class="cta-button">Test Series</button>
+              
+            </div>
+            <div class="image-section">
+              <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.jpg" alt="Top Image" class="top-image" />
+              <img
+                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.jpg"
+                alt="Bottom Image"
+                class="bottom-image"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -32,17 +64,20 @@ const HeroSection = () => {
       {/* Personalized Focus Section */}
       <div className="personalized-focus-section">
         <div className="focus-images">
-          {/* Left image (full-length) */}
           <img
             src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about1.jpg"
             alt="Student studying"
             className="left-image"
           />
-
-          {/* Right images (stacked vertically) */}
           <div className="right-images">
-            <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about2.jpg" alt="Library" />
-            <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about3.jpg" alt="Teamwork" />
+            <img
+              src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about2.jpg"
+              alt="Library"
+            />
+            <img
+              src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about3.jpg"
+              alt="Teamwork"
+            />
           </div>
         </div>
         <div className="focus-content">
@@ -57,71 +92,74 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* carousel */}
+      {/* Carousel */}
       <div className="carousel-section">
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/carousel.jpg" // Ensure this path points to the public folder
+          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/carousel.jpg"
           alt="Background"
           className="carousel-image"
         />
         <div className="carousel-content">
-        <h1>Our Courses</h1>
-        <p>We ensure that the focus on each child is different, and tailor-made just for them.</p>
+          <h1>Our Courses</h1>
+          <p>
+            We ensure that the focus on each child is different, and tailor-made
+            just for them.
+          </p>
         </div>
       </div>
 
-      <Dashboard/>
+      <Dashboard />
 
-      {/* carousel */}
+      {/* Test Series Section */}
       <div className="testSeries-section">
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg" // Ensure this path points to the public folder
+          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg"
           alt="Background"
           className="testSeries-image"
         />
         <div className="testSeries-content">
-        <h1>Test Series</h1>
-        <p>Testing oneself is a valuable tool to measure progress at regular intervals as it helps to determine learning gaps, 
-          improves knowledge retention, boosts checking abilities thus minimizing careless errors.
-           Testing encourages Students to learn more as it helps them to better organize their knowledge  
-          and apply in new contexts in a better way.</p>
+          <h1>Test Series</h1>
+          <p>
+            Testing oneself is a valuable tool to measure progress at regular
+            intervals as it helps to determine learning gaps, improves knowledge
+            retention, boosts checking abilities, and minimizes careless errors.
+          </p>
           <button className="btn secondary">Enquire Now</button>
         </div>
       </div>
 
+      {/* Founders Section */}
       <div className="founders-container">
-      <h2 className="title">Founders</h2>
-      <div className="founders">
-        <div className="founder">
-          <img
-            src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder1.jpg"
-            alt="Dr. Abhilasha"
-            className="founder-image"
-          />
-          <h3 className="founder-name">Dr. Abhilasha</h3>
-          <p className="founder-role">Co - Founder</p>
-          <p className="founder-desc">A scientist with a passion to teach.</p>
-        </div>
-        <div className="founder">
-          <img
-            src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder2.jpeg"
-            alt="Dr. Jayanti Datta"
-            className="founder-image"
-          />
-          <h3 className="founder-name">Dr. Jayanti Datta</h3>
-          <p className="founder-role">Co - Founder</p>
-          <p className="founder-desc">
-            An experienced educator with a career spanning over 20 years.
-          </p>
+        <h2 className="title">Founders</h2>
+        <div className="founders">
+          <div className="founder">
+            <img
+              src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder1.jpg"
+              alt="Dr. Abhilasha"
+              className="founder-image"
+            />
+            <h3 className="founder-name">Dr. Abhilasha</h3>
+            <p className="founder-role">Co - Founder</p>
+            <p className="founder-desc">A scientist with a passion to teach.</p>
+          </div>
+          <div className="founder">
+            <img
+              src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder2.jpeg"
+              alt="Dr. Jayanti Datta"
+              className="founder-image"
+            />
+            <h3 className="founder-name">Dr. Jayanti Datta</h3>
+            <p className="founder-role">Co - Founder</p>
+            <p className="founder-desc">
+              An experienced educator with a career spanning over 20 years.
+            </p>
+          </div>
         </div>
       </div>
-      </div>
-    
-      <Testimonial/>
-      <Footer/>
-    </>
 
-   
+      <Testimonial />
+      <Footer />
+    </>
   );
 };
 

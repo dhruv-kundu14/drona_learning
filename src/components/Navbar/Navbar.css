@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,4 +58,106 @@
   .navbar-button button:hover {
     background-color: #d18f00;
   }
-  
+   */
+   
+/* Normal navbar styling */
+.navbar {
+  position: fixed; /* Fix the navbar to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* background/-color: rgba(255, 255, 255, 0.1); Slightly transparent */
+  color: rgb(0, 0, 0);
+  padding: 0rem; /* Consistent padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease; /* Smooth transition */
+  z-index: 10;
+  box-shadow: none;
+}
+
+/* Parent container for logo and text */
+.navbar-logo {
+  display: flex; 
+  align-items: center; 
+  gap: 10px; /* Space between image and text */
+}
+
+/* Styling for the logo image */
+.navbar-logo img {
+  width: 90px; /* Set consistent width */
+  margin-right: 10px; /* Space between image and text */
+  cursor: pointer; /* Pointer cursor for clickable logo */
+}
+
+/* Styling for the text */
+.nav-font h1 {
+  font-size: 1.7rem; /* Adjust font size */
+  font-weight: bold; /* Bold text */
+  margin: 0; /* Remove default margin */
+  color: rgb(0, 0, 0); /* Adjust text color */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Capsule navbar when scrolled */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95); /* Solid background */
+  background: linear-gradient(135deg, #6a0dad, #ff7f00); /* Gradient from purple to orange */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  border-radius: 10px; /* Optional: rounded corners */
+  padding: 20px; /* Adjust the padding as needed */  padding: 0rem 1rem ;
+  justify-content: center; /* Center the links */
+  border-radius: 25px; /* Rounded corners for capsule shape */
+  width: fit-content; /* Shrink to fit content */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset for centering */
+  margin-top: 1rem; /* Add some space from the top */
+  transition: all 0.5s ease-in-out; /* Smooth animation */
+}
+
+/* Navigation links */
+.navbar .navbar-links {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem; /* Adjust spacing */
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar .navbar-links li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-links li a:hover {
+  color: #ff6347; /* Hover color */
+}
+
+/* Hide logo and title when scrolled */
+.navbar.scrolled .navbar-logo,
+.navbar.scrolled .nav-font {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .navbar.scrolled {
+    flex-direction: column; /* Stack links vertically */
+    width: 90%; /* Adjust capsule width on smaller screens */
+    left: 5%; /* Centered horizontally */
+    transform: none; /* No transform on mobile */
+  }
+
+  .navbar-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 1rem;
+  }
+}
