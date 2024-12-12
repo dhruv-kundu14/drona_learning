@@ -55,7 +55,7 @@ const Navbar = () => {
         <>
           <div className="navbar-logo">
             <img
-              src="https://dhruv-kundu14.github.io/drona_learning/Icons/CompanyLogo/Drona.jpeg"
+              src="https://dhruv-kundu14.github.io/drona_learning/Icons/CompanyLogo/Drona.png"
               alt="Drona Learning Solutions"
               style={{ width: 90, marginLeft: 10, cursor: "pointer" }}
             />

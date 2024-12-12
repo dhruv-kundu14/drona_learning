@@ -50,9 +50,9 @@ const HeroSection = () => {
               
             </div>
             <div class="image-section">
-              <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.jpg" alt="Top Image" class="top-image" />
+              <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png" alt="Top Image" class="top-image" />
               <img
-                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.jpg"
+                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.png"
                 alt="Bottom Image"
                 class="bottom-image"
               />
