@@ -63,10 +63,10 @@
 /* Normal navbar styling */
 .navbar {
   position: fixed; /* Fix the navbar to the top */
-  top: 0;
-  left: 0;
-  width: 100%;
-  /* background/-color: rgba(255, 255, 255, 0.1); Slightly transparent */
+  top: 10px;
+  left: 15px;
+  width: 98%;
+  background-color: rgba(236, 216, 253, 0.5);  /* Slightly transparent */
   color: rgb(0, 0, 0);
   padding: 0rem; /* Consistent padding */
   display: flex;
@@ -75,6 +75,7 @@
   transition: all 0.5s ease; /* Smooth transition */
   z-index: 10;
   box-shadow: none;
+  border-radius: 20px;
 }
 
 /* Parent container for logo and text */
@@ -84,12 +85,7 @@
   gap: 10px; /* Space between image and text */
 }
 
-/* Styling for the logo image */
-.navbar-logo img {
-  width: 90px; /* Set consistent width */
-  margin-right: 10px; /* Space between image and text */
-  cursor: pointer; /* Pointer cursor for clickable logo */
-}
+
 
 /* Styling for the text */
 .nav-font h1 {

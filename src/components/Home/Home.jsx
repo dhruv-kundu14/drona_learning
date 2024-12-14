@@ -39,18 +39,21 @@ const HeroSection = () => {
               <h3>LEARN HOW TO LEARN</h3>
               <h1>Enhance the Self-Learning Capability in Your Child</h1>
               <p>
-                We don’t know what professional skills our children would need
-                10 years from now, but we do know that the
-                <strong> ability to learn new skills quickly</strong> and
-                <strong> apply those skills</strong> will stay relevant forever.
-                Let us join hands and prepare them to be 
-                <strong> future-ready</strong>.
-              </p>
+  <strong>Drona Learning Academy</strong> is dedicated to delivering high-quality education through 
+  <strong>innovative teaching methodologies</strong> and 
+  <strong>personalized learning experiences</strong>. Our carefully designed educational programs are tailored to not only promote 
+  <strong>academic excellence</strong> but also nurture 
+  <strong>holistic development</strong>, empowering students to thrive both inside and outside the classroom.
+</p>
+
               <button class="cta-button">Test Series</button>
-              
             </div>
             <div class="image-section">
-              <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png" alt="Top Image" class="top-image" />
+              <img
+                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png"
+                alt="Top Image"
+                class="top-image"
+              />
               <img
                 src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.png"
                 alt="Bottom Image"
