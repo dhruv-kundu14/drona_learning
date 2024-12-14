@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SelfLearning.css";
 import Footer from "../Footer/Footer";
 import axios from "axios";
@@ -7,6 +7,29 @@ import 'react-toastify/dist/ReactToastify.css'; // Import CSS for Toastify
 
 
 const SelfLearning = () => {
+
+     useEffect(() => {
+        // Function to handle scroll event
+        const handleScroll = () => {
+          const scrollY = window.scrollY; // Get scroll position
+          const imageContainer = document.querySelector(".self-image-container");
+    
+          // Calculate opacity based on scroll position
+          const opacity = 1 - scrollY / 500; // Adjust 500 to control how fast it disappears
+          if (opacity >= 0) {
+            imageContainer.style.opacity = opacity; // Set opacity dynamically
+          }
+        };
+    
+        // Attach scroll event listener
+        window.addEventListener("scroll", handleScroll);
+    
+        // Clean up the event listener on component unmount
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+  
 
   const [formData, setFormData] = useState({
     parentName: '',
@@ -85,6 +108,8 @@ const SelfLearning = () => {
   return (
     <>
       <div className="self-container">
+      <div className="self-wrapper">
+      <div className="self-image-container"></div>
         <h2 className="self-title">Why Choose Us?</h2>
         <hr className="self-divider" />
         <div className="self-content">
@@ -170,6 +195,7 @@ const SelfLearning = () => {
           <div className="self-register">
             <b>Register today and take advantage of our special discount!</b>
           </div>
+        </div>
         </div>
       </div>
 

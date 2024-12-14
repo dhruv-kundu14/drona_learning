@@ -1,10 +1,29 @@
-import React, { useState } from 'react';
-import './Careers.css';
+import React, { useState } from "react";
+import "./Careers.css";
 
 const Card = () => {
-    const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState(null);
 
-  const cards = ['Card 1', 'Card 2', 'Card 3'];
+  const cards = [
+    {
+      title: "Math",
+      image:
+        "https://dhruv-kundu14.github.io/drona_learning/Icons/career/math.png",
+      description: `Mathematics teachers at Drona Learning inspire grades 6-12 with engaging, personalized lessons, fostering critical thinking and strong foundations in CBSE, ICSE, and IGCSE curricula.`,
+    },
+    {
+      title: "Science",
+      image:
+        "https://dhruv-kundu14.github.io/drona_learning/Icons/career/science.png",
+      description: `Science teachers at Drona Learning ignite curiosity in grades 6-12 through interactive, personalized lessons, building strong foundations in CBSE, ICSE, and IGCSE curricula.`,
+    },
+    {
+        title: "Assisted Self Learning (ASLP)",
+        image:
+          "https://dhruv-kundu14.github.io/drona_learning/Icons/career/learning.png",
+        description: `The Assisted Self-Learning Program (ASLP) at Drona Learning Academy is a unique educational approach designed to empower students through self-paced learning with the support of expert guidance.`
+    }
+  ];
 
   const handleMouseEnter = (index) => {
     setHoveredCard(index);
@@ -17,7 +36,7 @@ const Card = () => {
   return (
     <div className="card-component">
       <div className="card-container">
-        {cards.map((content, index) => {
+        {cards.map((card, index) => {
           // Calculate card position dynamically
           const totalCards = cards.length;
           const middleIndex = Math.floor(totalCards / 2);
@@ -36,7 +55,9 @@ const Card = () => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              {content}
+              <img src={card.image} alt={card.title} className="card-image" />
+              <h3 className="card-title">{card.title}</h3>
+              <p className="card-description">{card.description}</p>
             </div>
           );
         })}

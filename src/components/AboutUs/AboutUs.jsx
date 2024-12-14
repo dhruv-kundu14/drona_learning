@@ -1,9 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AboutUs.css";
 import Footer from "../Footer/Footer";
 
 const AboutUs = () => {
   const [hovered, setHovered] = useState(null);
+
+   useEffect(() => {
+      // Function to handle scroll event
+      const handleScroll = () => {
+        const scrollY = window.scrollY; // Get scroll position
+        const imageContainer = document.querySelector(".about-image-container");
+  
+        // Calculate opacity based on scroll position
+        const opacity = 1 - scrollY / 500; // Adjust 500 to control how fast it disappears
+        if (opacity >= 0) {
+          imageContainer.style.opacity = opacity; // Set opacity dynamically
+        }
+      };
+  
+      // Attach scroll event listener
+      window.addEventListener("scroll", handleScroll);
+  
+      // Clean up the event listener on component unmount
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
 
   const founders = [
     {
@@ -25,18 +47,23 @@ const AboutUs = () => {
 
   return (
     <>
-      <div className="about-testSeries-section">
-        <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg" // Ensure this path points to the public folder
-          alt="Background"
-          className="about-testSeries-image"
-        />
-        <div className="about-testSeries-content">
-          <h1>About Us</h1>
-          <p>Get To Know Us.</p>
-          {/* <button className="btn secondary">Enquire Now</button> */}
+     
+     
+ 
+       <div className="about-testSeries-section">
+        <div className="about-wrapper"></div>
+       <div className="about-image-container"></div>
+          <img
+            src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg"
+            alt="Background"
+            className="about-testSeries-image"
+          />
+          <div className="about-testSeries-content">
+            <h1>About Us</h1>
+            <p>Get To Know Us.</p>
+          </div>
         </div>
-      </div>
+     
 
       {/* Personalized Focus Section */}
       <div className="personalized-about-section">
