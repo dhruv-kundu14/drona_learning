@@ -4,6 +4,7 @@
   flex-direction: column; /* Stack navbar and content */
   min-height: 100vh;
   position: relative;
+  padding: 20px; /* Add some padding for smaller screens */
 }
 
 /* Image container for the background */
@@ -19,7 +20,47 @@
   background-position: right; /* Center the background image */
   z-index: -1; /* Send the image behind everything else */
   transition: opacity 0.5s ease-out; /* Smooth fade-out transition */
- 
+}
+
+/* Responsive styles for tablets */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    display: flex;
+  flex-direction: column; /* Stack navbar and content */
+  min-height: 100vh;
+  position: relative;
+  padding: 20px; /* Add some padding for smaller screens */
+  }
+
+  .image-container {
+    background-position: center; /* Adjust background image position */
+    background-size: contain; /* Ensure it fits nicely */
+  }
+}
+
+/* Responsive styles for mobile phones */
+@media screen and (max-width: 480px) {
+  .wrapper {
+    display: flex;
+  flex-direction: column; /* Stack navbar and content */
+  min-height: 100vh;
+  position: relative;
+  padding: 20px; /* Add some padding for smaller screens */
+  }
+
+  .image-container {
+    position: fixed; /* Fix background image behind the content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh; /* Ensure it covers the full viewport */
+  background-image: url('../public/Icons/Background/bg12.png'); /* Replace with your image URL */
+  background-size: cover; /* Cover the entire screen */
+  background-repeat: no-repeat;
+  background-position: right; /* Center the background image */
+  z-index: -1; /* Send the image behind everything else */
+  transition: opacity 0.5s ease-out; /* Smooth fade-out transition */
+  }
 }
 
 
@@ -42,6 +83,7 @@
   color: white; /* Adjust text color for contrast, if needed */
 }
 
+/* Hero Section Container */
 .hero-container {
   margin-top: 200px;
   margin-bottom: 50px;
@@ -53,7 +95,6 @@
   height: 100vh; /* Full viewport height */
 }
 
-
 /* Text section */
 .text-section {
   flex: 1;
@@ -62,7 +103,7 @@
 
 .text-section h3 {
   margin-left: 50px;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 600;
   text-align: left;
   color: #1b034d;
@@ -101,7 +142,6 @@
   margin-bottom: 20px;
 }
 
-
 /* Image section */
 .image-section {
   margin-left: 100px;
@@ -133,8 +173,6 @@
   opacity: 0.9;
 }
 
-
-
 /* Hero Section Styling */
 .hero-section {
   position: relative;
@@ -148,8 +186,7 @@
   overflow: hidden;
 }
 
-
-
+/* Button Styles */
 .btn {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -182,71 +219,85 @@
   background-color: #f0f0f0;
 }
 
-/* Responsive typography */
-@media (min-width: 768px) {
-  .hero-content h1 {
-    font-size: 3.5rem; /* Increase font size on larger screens */
+/* Responsive typography and layout adjustments for smaller devices */
+@media (max-width: 768px) { /* Tablets */
+  /* Hero Section Container */
+  .hero-container {
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding: 20px;
+    flex-direction: column; /* Stack text and images vertically */
   }
 
-  .hero-content p {
-    font-size: 1.5rem; /* Increase paragraph font size */
+  .text-section {
+    max-width: 60%; /* Reduce width for smaller screens */
+    margin-left: 0; /* Align text section properly */
   }
 
-  .content {
-    padding: 1rem; /* Reduce padding on smaller screens */
-  }
-}
-/*responsive styles */
-@media (max-width: 1024px) { /* Tablets and smaller desktops */
-  .hero-section {
-    height: 60vh; /* Slightly smaller height */
+  .text-section h1 {
+    font-size: 45px; /* Scale down header */
   }
 
-  .hero-content {
-    padding: 1.5rem;
+  .text-section p {
+    font-size: 14px; /* Scale down paragraph text */
   }
 
-  .hero-content h1 {
-    font-size: 2rem;
+  .text-section .cta-button {
+    padding: 8px 15px;
+    font-size: 14px; /* Adjust button size */
   }
 
-  .hero-content p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) { /* Tablets and mobile screens */
-  .hero-section {
-    height: 50vh; /* Even smaller height for phones */
+  .image-section {
+    margin-left: 0; /* Remove the left margin on smaller screens */
+    justify-content: center; /* Center images */
+    margin-top: 30px;
   }
 
-  .hero-content {
-    padding: 1rem;
-  }
-
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
+  .top-image, .bottom-image {
+    width: 250px; /* Scale down images */
   }
 }
 
-@media (max-width: 480px) { /* Small mobile screens */
-  .hero-section {
-    height: 40vh; /* Further reduce height */
+@media (max-width: 480px) { /* Mobile screens */
+  .hero-container {
+    margin-top: 230px;
+    margin-bottom: 20px;
+    padding: 10px;
+    flex-direction: column; /* Stack text and images vertically */
   }
 
-  .hero-content h1 {
-    font-size: 1.2rem;
+  .text-section {
+    max-width: 100%; /* Full width on mobile */
+    margin-left: 0; /* Align text properly */
+    text-align: center; /* Center the text */
   }
 
-  .hero-content p {
-    font-size: 0.9rem;
+  .text-section h1 {
+    font-size: 32px; /* Further reduce header size */
+  }
+
+  .text-section p {
+    font-size: 12px; /* Scale down paragraph text */
+  }
+
+  .text-section .cta-button {
+    padding: 8px 15px;
+    font-size: 14px; /* Adjust button size */
+  }
+
+  .image-section {
+    margin-left: 0; /* Remove left margin */
+    justify-content: center; /* Center images */
+    margin-top: 20px;
+  }
+
+  .top-image, .bottom-image {
+    width: 180px; /* Scale images down further */
   }
 }
 
+
+/* Personalized Focus Section */
 .personalized-focus-section {
   display: flex;
   align-items: center;
@@ -314,51 +365,45 @@
   background-color: darkorange;
 }
 
-/* Responsive styles */
-@media (max-width: 1024px) {
+/* Responsive styles for 480px screens (Small Mobile Devices) */
+@media (max-width: 480px) {
   .personalized-focus-section {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem; /* Stack elements vertically with less gap */
+    margin: 1rem auto; /* Reduced margin for smaller screens */
   }
 
   .focus-images {
-    max-width: 100%;
+    max-width: 95%; /* Ensure the images take full width on small screens */
   }
 
   .focus-images .left-image,
-  .focus-images .right-images img {
-    height: 400px;
+  .focus-images .right-images {
+    height: 250px; /* Reduce image height for mobile screens */
   }
 
   .focus-content {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 768px) { 
-  .focus-images .left-image,
-  .focus-images .right-images img {
-    height: 300px;
+    max-width: 100%; /* Allow the content to take full width */
+    text-align: center; /* Center align the text for better appearance on small screens */
   }
 
   .focus-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.1rem; /* Adjust heading size */
+    margin-bottom: 0.8rem; /* Adjust margin for mobile */
   }
 
   .focus-content p {
-    font-size: 1rem;
+    font-size: 0.8rem; /* Adjust paragraph size */
+    margin-bottom: 1rem; /* Adjust margin for mobile */
+  }
+
+  .focus-content .btn.primary {
+    font-size: 0.5rem; /* Reduce font size of the button */
+    padding: 0.7rem 1.2rem; /* Adjust padding for smaller screens */
   }
 }
 
-@media (max-width: 480px) { /* Small mobile screens */
-  .focus-content h2 {
-    font-size: 1.2rem;
-  }
 
-  .focus-content p {
-    font-size: 0.9rem;
-  }
-}
 
 
 .carousel-section {
@@ -455,18 +500,18 @@
   z-index: -1;
 }
 
-.testSeries-content {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  margin-bottom: 120px;
-  padding: 2rem;
-  color: white;
-  text-align: center;
-  background: rgba(22, 36, 103, 0.5);
-  border-radius: 10px;
-}
+  .testSeries-content {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-bottom: 120px;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    background: rgba(22, 36, 103, 0.5);
+    border-radius: 10px;
+  }
 
 /* Responsive styles */
 @media (max-width: 1024px) {
@@ -494,16 +539,41 @@
 }
 
 @media (max-width: 480px) {
+
+  .testSeries-content {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    margin-left: 2px;
+    margin-bottom: 120px;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    background: rgba(22, 36, 103, 0.5);
+    border-radius: 10px;
+  }
+
+  .testSeries-image {
+    width: 110%;
+    height: 120%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 2px;
+    border-radius: 10px;
+    z-index: -1;
+  }
+
   .testSeries-section {
     height: 20vh;
   }
 
   .testSeries-content h1 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   .testSeries-content p {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
   }
 }
 
@@ -578,7 +648,7 @@
   }
 
   .founders {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.5rem;
   }
 
@@ -601,13 +671,31 @@
 }
 
 @media (max-width: 480px) {
+
+  .founder {
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .founders {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .founders-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin-left: 20px;
+  }
+
   .title {
     font-size: 1.5rem;
   }
 
   .founder-image {
-    width: 180px;
-    height: 260px;
+    width: 160px;
+    height: 230px;
   }
 
   .founder-name {
@@ -620,5 +708,6 @@
 
   .founder-desc {
     font-size: 0.9rem;
+    text-align: center;
   }
 }

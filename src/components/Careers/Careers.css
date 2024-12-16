@@ -23,27 +23,7 @@
  
 }
 
-/* Scaling for Smaller Screens */
-@media (max-width: 1024px) {
-  .hero-container {
-    transform: scale(0.8); /* Scale down to 80% */
-    height: calc(100vh - 60px);
-  }
-}
 
-@media (max-width: 768px) {
-  .hero-container {
-    transform: scale(0.6); /* Scale down to 60% */
-    height: calc(100vh - 60px);
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-container {
-    transform: scale(0.4); /* Scale down to 40% */
-    height: calc(100vh - 60px);
-  }
-}
 
 
 .careers-container {

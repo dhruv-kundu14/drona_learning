@@ -11,23 +11,18 @@ export default function Footer() {
         </div>
 
         <div>
-          <a href='#!' className='me-4 text-reset'>
+          <a href='https://www.facebook.com/DronaLearningAcademy' className='me-4 text-reset'>
             <MDBIcon fab icon="facebook-f" />
           </a>
-          <a href='#!' className='me-4 text-reset'>
-            <MDBIcon fab icon="twitter" />
-          </a>
-          <a href='#!' className='me-4 text-reset'>
-            <MDBIcon fab icon="google" />
-          </a>
-          <a href='#!' className='me-4 text-reset'>
+
+          <a href='https://www.instagram.com/dronalearningacademy/' className='me-4 text-reset'>
             <MDBIcon fab icon="instagram" />
           </a>
-          <a href='#!' className='me-4 text-reset'>
+          <a href='https://www.linkedin.com/company/drona-learning-academy/' className='me-4 text-reset'>
             <MDBIcon fab icon="linkedin" />
           </a>
-          <a href='#!' className='me-4 text-reset'>
-            <MDBIcon fab icon="github" />
+          <a href='https://www.youtube.com/@DRONALEARNINGACADEMY' className='me-4 text-reset'>
+            <MDBIcon fab icon="youtube" />
           </a>
         </div>
       </section>

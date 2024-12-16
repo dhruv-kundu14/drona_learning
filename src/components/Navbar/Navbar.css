@@ -1,72 +1,10 @@
-/* .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fef8f8;
-  }
-  
-  .navbar-logo,
-  .nav-font {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-logo img {
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .navbar-links {
-    display: flex;
-    list-style: none;
-    font-size: 24px;
-    margin: 0;
-    padding: 0;
-    flex-grow: 1;
-    justify-content: flex-end; 
-  }
-  
-  .navbar-links li {
-    margin: 0 15px;
-  }
-  
-  .navbar-links a {
-    text-decoration: none;
-    color: rgb(52, 50, 50);
-    font-size: 16px;
-  }
-  
-  .navbar-links a:hover {
-    color: #f0a500;
-  }
-  
-  .navbar-button {
-    margin-left: 20px;
-  }
-  
-  .navbar-button button {
-    background-color: #f0a500;
-    border: none;
-    padding: 8px 15px;
-    color: white;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .navbar-button button:hover {
-    background-color: #d18f00;
-  }
-   */
-   
 /* Normal navbar styling */
 .navbar {
   position: fixed; /* Fix the navbar to the top */
   top: 10px;
   left: 15px;
   width: 98%;
-  background-color: rgba(236, 216, 253, 0.5);  /* Slightly transparent */
+  background-color: rgba(236, 216, 253, 0.5); /* Slightly transparent */
   color: rgb(0, 0, 0);
   padding: 0rem; /* Consistent padding */
   display: flex;
@@ -80,12 +18,10 @@
 
 /* Parent container for logo and text */
 .navbar-logo {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   gap: 10px; /* Space between image and text */
 }
-
-
 
 /* Styling for the text */
 .nav-font h1 {
@@ -99,11 +35,9 @@
 /* Capsule navbar when scrolled */
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.95); /* Solid background */
-  /* background: linear-gradient(135deg, #6a0dad, #ff7f00); */
-  
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
   border-radius: 10px; /* Optional: rounded corners */
-  padding: 20px; /* Adjust the padding as needed */  padding: 0rem 1rem ;
+  padding: 10px 1rem; /* Adjust the padding as needed */
   justify-content: center; /* Center the links */
   border-radius: 25px; /* Rounded corners for capsule shape */
   width: fit-content; /* Shrink to fit content */
@@ -140,21 +74,105 @@
   display: none;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+/* Hamburger icon styling */
+.hamburger-icon {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger-icon .bar {
+  height: 3px;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive styles for tablets */
+@media screen and (max-width: 768px) {
   .navbar {
-    padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    width: 90%; /* Adjust width for tablets */
+    padding: 0.5rem 1rem; /* Reduce padding for tablets */
+    top: 5px; /* Bring navbar closer to the top */
+    left: 5%; /* Center the navbar */
+    border-radius: 15px; /* Slightly rounded corners */
   }
 
-  .navbar.scrolled {
-    flex-direction: column; /* Stack links vertically */
-    width: 90%; /* Adjust capsule width on smaller screens */
-    left: 5%; /* Centered horizontally */
-    transform: none; /* No transform on mobile */
+  .nav-font h1 {
+    font-size: 1.4rem; /* Reduce font size for smaller screens */
   }
 
-  .navbar-links {
-    flex-direction: column; /* Stack links vertically */
-    gap: 1rem;
+  .navbar .navbar-links {
+    gap: 0.8rem; /* Reduce spacing between links */
   }
+
+  .navbar .navbar-links li a {
+    font-size: 1rem; /* Reduce font size for smaller screens */
+  }
+
+  .hamburger-icon {
+    display: flex; /* Show hamburger icon */
+  }
+}
+
+/* Responsive styles for mobile phones */
+@media screen and (max-width: 480px) {
+  .navbar {
+    position: fixed; /* Fix the navbar to the top */
+    top: 10px;
+    left: 15px;
+    width: 92%;
+    background-color: rgba(236, 216, 253, 0.5); /* Slightly transparent */
+    color: rgb(0, 0, 0);
+    padding: 0rem; /* Consistent padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease; /* Smooth transition */
+    z-index: 10;
+    box-shadow: none;
+    border-radius: 20px;
+  }
+
+  
+
+  .navbar-logo {
+    justify-content: center; /* Center the logo */
+    margin-bottom: 0.5rem; /* Add spacing below the logo */
+  }
+
+  .nav-font h1 {
+    font-size: 1.2rem; /* Further reduce font size for mobile */
+  }
+
+  .navbar .navbar-links {
+    display: none; /* Hide links by default */
+    flex-direction: row; /* Stack the links */
+    gap: 0.5rem; /* Reduce spacing between links */
+    padding: 0; /* Remove extra padding */
+  }
+
+  .navbar .navbar-links.open {
+    display: flex; /* Show the menu when open */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 9px;
+    position: absolute;
+    top: 80px;
+    right: 25px;
+    left:18px;
+    z-index: 100;
+  }
+
+  .navbar .navbar-links li a {
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+
+
 }

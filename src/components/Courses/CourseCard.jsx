@@ -10,24 +10,23 @@ const CourseCard = () => {
       title: "Assisted Self Learning (ASLP)",
       image:
         "https://dhruv-kundu14.github.io/drona_learning/Icons/career/math.png",
-      description: `Mathematics teachers at Drona Learning inspire grades 6-12 with engaging, personalized lessons,
-       fostering critical thinking and strong foundations in CBSE, ICSE, and IGCSE curricula.`,
+      description: `For classes VI to X -
+Concept-wise Practice Worksheets, Tests and more`,
       link: "/course/aslp" // Example of the route for the course
     },
     {
       title: "Test Series",
       image:
         "https://dhruv-kundu14.github.io/drona_learning/Icons/career/science.png",
-      description: `Science teachers at Drona Learning ignite curiosity in grades 6-12 through interactive,
-       personalized lessons, building strong foundations in CBSE, ICSE, and IGCSE curricula.`,
+      description: `Comprehensive routine tests conducted by Drona Teachers aligned with the latest CBSE curriculum and more`,
       link: "/course/test-series" // Another route for the course
     },
     {
       title: "Live Interactive Classes",
       image:
         "https://dhruv-kundu14.github.io/drona_learning/Icons/career/learning.png",
-      description: `The Assisted Self-Learning Program (ASLP) at Drona Learning Academy is a unique educational approach designed
-       to empower students through self-paced learning with the support of expert guidance.`,
+      description: `Concept based teaching by our expert educators to bridge learning gaps and to build 
+      strong foundations and concepts of the subjects and more…`,
       link: "/course/live-classes" // Another route for the course
     },
   ];
