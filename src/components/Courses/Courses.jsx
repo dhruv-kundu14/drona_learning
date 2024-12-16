@@ -1,9 +1,16 @@
 import React from 'react'
+import CarouselFade from './Carousel'
+import CourseCard from './CourseCard'
+import Footer from "../Footer/Footer"
 
 const Courses = () => {
   return (
     <div>
-      <h1>Courses</h1>
+      <CarouselFade />
+    <h1 className='courses-text'>See what you can learn with us</h1>
+      <CourseCard />
+
+      <Footer />
     </div>
   )
 }
