@@ -55,8 +55,9 @@ import SelfLearning from './components/Selflearning/SelfLearning.jsx';
 import Careers from './components/Careers/Careers.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import CourseCard from "./components/Courses/CourseCard.jsx"; 
-import CoursePage from "./components/Ecom/ASLP.jsx";
-import Nav2 from './components/Navbar/Nav2.jsx';
+import CoursePage from "./Ecom/Aslp/ASLP.jsx";
+
+import Nav2 from './Ecom/Navbar/Nav2.jsx';
 
 const App = () => {
   return (

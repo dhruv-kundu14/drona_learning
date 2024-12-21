@@ -53,16 +53,18 @@ const HeroSection = () => {
               <button class="cta-button">Test Series</button>
             </div>
             <div class="image-section">
-              <img
-                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png"
-                alt="Top Image"
-                class="top-image"
-              />
-              <img
-                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.png"
-                alt="Bottom Image"
-                class="bottom-image"
-              />
+            <img
+  src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png"
+  alt="Top section of the website with a hero banner"
+  className="top-image"
+/>
+<img
+  src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.png"
+  alt="Bottom section of the website with a hero banner"
+  className="bottom-image"
+/>
+
+
             </div>
           </div>
         </div>

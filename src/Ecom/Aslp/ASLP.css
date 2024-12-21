@@ -1,0 +1,47 @@
+/* CoursePage.css */
+
+/* Layout for the course page */
+.course-page-container {
+    display: flex;
+    padding-left: 250px; /* Sidebar width */
+    padding-top: 80px; /* Account for the top bar if any */
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+  }
+  
+  /* Course details section */
+  .course-details {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-details h2 {
+    color: #6a1b9a; /* Purple */
+    font-size: 2rem;
+  }
+  
+  .course-details p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .course-details strong {
+    color: #ff5722; /* Orange for price label */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .course-page-container {
+      padding-left: 0;
+      padding-top: 0;
+    }
+  
+    .course-details {
+      margin-top: 20px;
+    }
+  }
+  
