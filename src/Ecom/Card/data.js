@@ -3,7 +3,7 @@ export const products = [
       id: 1,
       name: "Mathematics - X CBSE",
       price: "26,250",
-      image: "https://via.placeholder.com/200",
+      image: "https://dhruv-kundu14.github.io/Icons/Ecom/books/1.png",
       description: "Advanced Plan - ASLP",
       course: "ASLP",
       type: "Advanced"

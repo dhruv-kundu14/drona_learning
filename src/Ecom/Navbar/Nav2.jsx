@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="nav2-icons">
         {/* Cart Icon */}
         <div className="nav2-cart" onClick={toggleCart}>
-          <img src="/Icons/Ecom/cart.png" alt="Cart Icon" className="cart-icon" />
+          <img src="https://dhruv-kundu14.github.io/Icons/Ecom/cart.png" alt="Cart Icon" className="cart-icon" />
           {isCartOpen && (
             <div className="cart-dropdown">
               <ul>
@@ -60,7 +60,7 @@ const Navbar = () => {
         {/* Login Icon */}
         <div className="nav2-login">
           <img
-            src="/path-to-login-icon.png"
+            src="https://dhruv-kundu14.github.io/Icons/Ecom/user.png"
             alt="Login Icon"
             onClick={toggleDropdown}
             className="login-icon"
