@@ -12,14 +12,14 @@ const CourseCard = () => {
         "https://dhruv-kundu14.github.io/drona_learning/Icons/career/math.png",
       description: `For classes VI to X -
 Concept-wise Practice Worksheets, Tests and more`,
-      link: "/course/aslp" // Example of the route for the course
+      link: "/course/aslp#ASLP" // Example of the route for the course
     },
     {
       title: "Test Series",
       image:
         "https://dhruv-kundu14.github.io/drona_learning/Icons/career/science.png",
       description: `Comprehensive routine tests conducted by Drona Teachers aligned with the latest CBSE curriculum and more`,
-      link: "/course/test-series" // Another route for the course
+      link: "/course/aslp#TEST" // Another route for the course
     },
     {
       title: "Live Interactive Classes",

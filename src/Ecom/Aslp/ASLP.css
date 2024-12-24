@@ -4,16 +4,32 @@
 .course-page-container {
     display: flex;
     padding-left: 250px; /* Sidebar width */
-    padding-top: 80px; /* Account for the top bar if any */
+    padding-top: 35px; /* Account for the top bar if any */
     flex-direction: column;
     gap: 20px;
     background-color: #f5f5f5;
     min-height: 100vh;
   }
+
+  .hero {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    overflow: hidden; /* Prevents the image from overflowing */
+  }
+  
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    object-position: center; /* Centers the image */
+  }
   
   /* Course details section */
   .course-details {
-    padding: 20px;
+    padding: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

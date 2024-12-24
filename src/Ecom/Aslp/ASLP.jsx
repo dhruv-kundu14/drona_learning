@@ -1,45 +1,76 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import React from "react";
+// import Sidebar from "../Sidebar/Sidebar";
+// import "./ASLP.css";  // Add some styles for CoursePage layout
+// import ProductList from "../Card/ProductList"
+// import Footer from "../Footer/Footer";
+
+// const CoursePage = () => {
+ 
+
+//   return (
+//     <>
+//     <div className="course-page-container">
+//       <div className="hero">
+//         <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/Background/2.png"/>
+//       </div>
+//       <Sidebar />
+//       <div className="course-details">
+//         <ProductList />
+       
+//       </div>
+//     </div>
+//     <Footer />
+//     </>
+
+//   );
+// };
+
+// export default CoursePage;
+
+
+import React, { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
-import "./ASLP.css";  // Add some styles for CoursePage layout
+import "./ASLP.css"; // Add some styles for CoursePage layout
+import ProductList from "../Card/ProductList";
+import Footer from "../Footer/Footer";
+import { products } from "../Card/data"; // Import product data
 
 const CoursePage = () => {
-  const { courseId } = useParams();
-  const [courseData, setCourseData] = useState(null);
 
-  // Fetch course details (simulated with useEffect here, in real case it would be an API call)
-  useEffect(() => {
-    // Simulate fetching course data based on courseId
-    const fetchCourseData = () => {
-      // Example static data - you would replace this with an actual API call
-      const data = {
-        id: courseId,
-        name: `Course Name for ${courseId}`,
-        description: `This is a detailed description for course ${courseId}. It includes lessons, quizzes, and more.`,
-        price: `$${Math.floor(Math.random() * 100) + 50}`,  // Random price between $50 and $150
-      };
-      setCourseData(data);
+    const [browseProducts, setBrowsedProducts] = useState(products);
+  
+    // Handle filter logic
+    const handleFilter = (selectedFilters) => {
+      if (selectedFilters.includes("All Products")) {
+        setBrowsedProducts(products); // Show all products
+      } else {
+        const filtered = products.filter((product) =>
+          selectedFilters.includes(product.course)
+        );
+        setBrowsedProducts(filtered);
+      }
     };
-
-    fetchCourseData();
-  }, [courseId]);
-
   return (
-    <div className="course-page-container">
-      <Sidebar />
-      <div className="course-details">
-        {courseData ? (
-          <>
-            <h2>{courseData.name}</h2>
-            <p>{courseData.description}</p>
-            <p><strong>Price:</strong> {courseData.price}</p>
-          </>
-        ) : (
-          <p>Loading course details...</p>
-        )}
+    <>
+      <div className="course-page-container">
+        <div className="hero">
+          <img
+            src="https://dhruv-kundu14.github.io/drona_learning/Icons/Background/2.png"
+            alt="Hero"
+          />
+        </div>
+
+        <div className="content-container">
+        <Sidebar onFilter={handleFilter} />
+          <div className="course-details">
+            <ProductList products={browseProducts} />
+          </div>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
+
 
 export default CoursePage;

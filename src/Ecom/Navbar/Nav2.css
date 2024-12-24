@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  background-image:linear-gradient(to right, rgb(239, 151, 247) , rgb(253, 167, 62)); /* Purple */
   color: #fff;
   font-family: 'Arial', sans-serif;
   position: sticky;

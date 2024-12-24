@@ -1,192 +1,96 @@
-/* Sidebar.css */
-
-/* Sidebar container */
+/* Sidebar Container */
 .sidebar-container {
   width: 250px;
   height: 100vh; /* Full viewport height */
-  background-color: #6419CF; /* Purple */
-  color: #fff; /* White text for contrast */
-  position: fixed;
-  top: 80px;
+  background-color:#f5f5f5; /* Purple */
+  color: #000000; /* White text for contrast */
+  position: absolute;
+  top: 90px;
   left: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align elements to the top */
   padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); */
   overflow-y: auto;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Sidebar navigation */
-.sidebar {
-  margin-bottom: 20px; /* Space between sidebar and filter section */
+/* Breadcrumb Navigation */
+.breadcrumb {
+  font-size: 18px;
+  margin-bottom: 40px;
 }
 
-.sidebar ul {
+.breadcrumb a {
+  color: #000;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Browse By Section */
+.browse-by h3,
+.filter-by h3 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.browse-by ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sidebar li {
-  margin: 15px 0;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: #fff; /* White text for the links */
+.browse-by ul li {
+  margin-bottom: 10px;
   font-size: 18px;
-  font-weight: 500;
-  display: block;
-  padding: 10px 15px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.sidebar a:hover {
-  background-color: #ff5722; /* Orange for hover */
-  color: #fff; /* Keep text white on hover */
+.browse-by ul li a {
+  color: #007BFF;
+  text-decoration: none;
 }
 
-/* Filter section */
-.fill {
-  margin-top: 10px; /* Reduced space between sidebar and filter section */
+.browse-by ul li a:hover {
+  text-decoration: underline;
 }
 
-.fill h1 {
-  font-size: 20px;
-  margin-bottom: 20px; /* Reduced space between heading and filters */
-  color: #ff5722; /* Orange for the heading */
-  text-align: center; /* Center the heading */
+/* Filter By Section */
+.filter-by {
+  margin-top: 20px;
 }
 
-.filter-container {
+.filter-section {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.filter-header {
   display: flex;
-  flex-direction: column;
-  gap: 10px; /* Reduce spacing between filter options */
-  align-items: flex-start; /* Align filter options to the left */
-}
-
-.filter-option {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Space between radio button and label */
-}
-
-input[type="radio"] {
-  width: 18px;
-  height: 18px;
+  justify-content: space-between;
   cursor: pointer;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.radio-label {
-  font-size: 16px;
-  color: #fff; /* White text for labels */
+.filter-options {
+  margin: 10px 0;
+}
+
+.filter-options div {
+  margin-bottom: 10px;
+}
+
+.filter-options label {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.1);
   cursor: pointer;
-}
-
-input[type="radio"]:checked + .radio-label {
-  color: #ff5722; /* Orange color for selected option */
-}
-
-/* Scroll behavior for overflow */
-.sidebar-container {
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #6a1b9a #2c3e50;
-}
-
-.sidebar-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.sidebar-container::-webkit-scrollbar-thumb {
-  background-color: #6a1b9a;
-  border-radius: 4px;
-}
-
-.sidebar-container::-webkit-scrollbar-track {
-  background-color: #2c3e50;
-}
-
-/* Responsive design */
-
-/* Medium screens (tablets) */
-@media (max-width: 1024px) {
-  .sidebar-container {
-    width: 220px; /* Narrower sidebar */
-  }
-
-  .sidebar a {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-
-  .fill h1 {
-    font-size: 18px;
-  }
-
-  .radio-label {
-    font-size: 14px;
-  }
-}
-
-/* Small screens (mobiles) */
-@media (max-width: 768px) {
-  .sidebar-container {
-    width: 100%;
-    height: auto;
-    position: relative; /* Sidebar becomes part of the content */
-    transform: translateX(-100%); /* Initially hidden */
-  }
-
-  .sidebar-container.open {
-    transform: translateX(0); /* Show sidebar when toggled */
-  }
-
-  .sidebar a {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-
-  .fill h1 {
-    font-size: 18px;
-  }
-
-  .radio-label {
-    font-size: 14px;
-  }
-
-  /* Button for mobile sidebar toggle */
-  .sidebar-toggle {
-    display: block;
-    background-color: #6a1b9a;
-    color: white;
-    padding: 10px 15px;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 576px) {
-  .sidebar-container {
-    width: 100%; /* Full width for small screens */
-    height: auto;
-    position: relative;
-  }
-
-  .sidebar ul {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .fill {
-    margin-top: 10px; /* Reduced margin for smaller screens */
-  }
 }
