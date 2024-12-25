@@ -56,21 +56,20 @@
 
 
 import React from "react";
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-} from "@mui/material";
-import "./ProductCard.css";
+import { useNavigate } from "react-router-dom";
+import { Card, CardMedia, CardContent, Typography, CardActions, Button } from "@mui/material";
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate(); // Hook should be at the top level, unconditionally
+
   if (!product) {
-    console.error("Product data is missing!"); // Log the error if product is undefined
-    return null; // Return nothing if product is undefined
+    console.error("Product data is missing!");
+    return null;
   }
+
+  const handleViewDetails = () => {
+    navigate(`/product/${product.id}`); // Navigate to the product details page
+  };
 
   const handleCart = () => {
     console.log(`Add to cart clicked for: ${product.name}`);
@@ -104,7 +103,12 @@ const ProductCard = ({ product }) => {
         >
           Add to Cart
         </Button>
-        <Button size="small" variant="outlined" color="secondary">
+        <Button
+          size="small"
+          variant="outlined"
+          color="secondary"
+          onClick={handleViewDetails}
+        >
           View Details
         </Button>
       </CardActions>
