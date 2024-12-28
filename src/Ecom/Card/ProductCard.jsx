@@ -58,9 +58,25 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from "@mui/material";
+import { useCart } from "../Cart/CartContext";
+import { ToastContainer, toast } from 'react-toastify';
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate(); // Hook should be at the top level, unconditionally
+  const { addToCart, removeFromCart, cart } = useCart();
+
+
+  const isInCart = cart.some((item) => item.id === product.id); // Check if product is in cart
+
+  // Handle the addition of the product to the cart
+  const handleCart = () => {
+    if (isInCart) {
+      removeFromCart(product.id); // Remove from cart if already added
+    } else {
+      addToCart(product); // Add to cart if not already added
+      toast("Item added to cart!");
+    }
+  };
 
   if (!product) {
     console.error("Product data is missing!");
@@ -71,9 +87,7 @@ const ProductCard = ({ product }) => {
     navigate(`/product/${product.id}`); // Navigate to the product details page
   };
 
-  const handleCart = () => {
-    console.log(`Add to cart clicked for: ${product.name}`);
-  };
+  
 
   return (
     <Card className="product-card">
@@ -103,6 +117,8 @@ const ProductCard = ({ product }) => {
         >
           Add to Cart
         </Button>
+        <ToastContainer />
+
         <Button
           size="small"
           variant="outlined"
