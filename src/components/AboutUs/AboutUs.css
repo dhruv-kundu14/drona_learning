@@ -3,7 +3,8 @@
   flex-direction: column;
   min-height: 100vh;
   position: relative;
-  padding: 20px; /* Add padding for all screen sizes */
+  padding: 20px;
+  /* Add padding for all screen sizes */
 }
 
 .about-image-container {
@@ -96,7 +97,8 @@
 
 .about-images .right-images img {
   width: 100%;
-  height: calc(400px / 2); /* Half the height of the left image */
+  height: calc(400px / 2);
+  /* Half the height of the left image */
   object-fit: cover;
   border-radius: 8px;
 }
@@ -210,275 +212,279 @@
   }
 }
 
-  
+
 /* Center the content */
 .info-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Allow stacking on smaller screens */
-    padding: 40px;
-    text-align: center; /* Center text in each section */
-  }
-  
-  /* Style each section */
-  .info-section {
-    flex: 1;
-    max-width: 500px; /* Limit the width of each section */
-    margin: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 1.1);
-  }
-  
-  .info-section h2 {
-    font-size: 1.8rem;
-    color: #001f5b;
-    margin-bottom: 20px;
-  }
-  
-  .info-section ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-  }
-  
-  .info-section li {
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .about-founders-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .about-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .about-founders-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .about-title {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  
-  .about-founders {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .about-founder {
-    position: relative;
-    max-width: 250px;
-    text-align: center;
-  }
-  
-  .about-founder-image {
-    width: 260px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .about-founder:hover .founder-image {
-    transform: scale(1.1);
-  }
-  
-  .about-founder-details {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-  
-  .about-founder-name {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .about-founder-role {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
-  .about-founder-desc {
-    font-size: 14px;
-  }
-  
-  .belief-container {
-    text-align: center;
-    margin: 50px auto;
-    max-width: 800px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .belief-title {
-    font-size: 1.5rem;
-    color: #6c757d;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
-  
-  .belief-tagline {
-    font-size: 2rem;
-    color: #343a40;
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
-  
-  .belief-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .belief-section {
-    flex: 1;
-    min-width: 300px;
-    text-align: left;
-  }
-  
-  .belief-section h4 {
-    font-size: 1.2rem;
-    color: #343a40;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .belief-section p {
-    font-size: 1rem;
-    color: #6c757d;
-    line-height: 1.6;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* Allow stacking on smaller screens */
+  padding: 40px;
+  text-align: center;
+  /* Center text in each section */
+}
 
-  .why-container {
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 1200px;
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  .why-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #343a40;
-  }
-  
-  .why-divider {
-    width: 50px;
-    height: 3px;
-    background-color: #ff8000; /* Adjust the orange shade */
-    border: none;
-    margin: 10px auto 20px auto;
-  }
-  
-  .why-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .why-left,
-  .why-right {
-    flex: 1;
-  }
-  
-  .why-left p,
-  .why-right p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-    text-align: justify;
-  }
+/* Style each section */
+.info-section {
+  flex: 1;
+  max-width: 500px;
+  /* Limit the width of each section */
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 1.1);
+}
 
-  .join-section {
-    position: relative;
-    width: 100%;
-    height: 35vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-  }
-  
-  .join-image {
-    width: 100%;
-    height: 120%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  
-  .join-content {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    margin-bottom: 120px;
-    padding: 2rem;
-    color: white;
-    text-align: center;
-    background: rgba(22, 36, 103, 0.5);
-    border-radius: 10px;
-    
-  }
-  
-  .join-content h1 {
-    margin-top: 10px;
-    margin-left: 150px;
-    font-size: 3rem;
-    text-align: left;
-  }
-  
-  .join-content p {
-    margin-left: 150px;
-    font-size: 1.2rem;
-    text-align: left;
-  }
-  
-  .join-section .btn.secondary1 {
-    padding: 0.5rem 1.5rem;
-    background-color: orange;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 50px;
-  }
-  
-  .join-section .btn.secondary1:hover {
-    background-color: darkorange;
-  }
+.info-section h2 {
+  font-size: 1.8rem;
+  color: #001f5b;
+  margin-bottom: 20px;
+}
+
+.info-section ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.info-section li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.about-founders-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.about-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.about-founders-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.about-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.about-founders {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-founder {
+  position: relative;
+  max-width: 250px;
+  text-align: center;
+}
+
+.about-founder-image {
+  width: 260px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-founder:hover .founder-image {
+  transform: scale(1.1);
+}
+
+.about-founder-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.about-founder-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-founder-role {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.about-founder-desc {
+  font-size: 14px;
+}
+
+.belief-container {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 800px;
+  font-family: Arial, sans-serif;
+}
+
+.belief-title {
+  font-size: 1.5rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.belief-tagline {
+  font-size: 2rem;
+  color: #343a40;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.belief-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.belief-section {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.belief-section h4 {
+  font-size: 1.2rem;
+  color: #343a40;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.belief-section p {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.why-container {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 1200px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.why-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.why-divider {
+  width: 50px;
+  height: 3px;
+  background-color: #ff8000;
+  /* Adjust the orange shade */
+  border: none;
+  margin: 10px auto 20px auto;
+}
+
+.why-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.why-left,
+.why-right {
+  flex: 1;
+}
+
+.why-left p,
+.why-right p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.join-section {
+  position: relative;
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.join-image {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.join-content {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  margin-bottom: 120px;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  background: rgba(22, 36, 103, 0.5);
+  border-radius: 10px;
+
+}
+
+.join-content h1 {
+  margin-top: 10px;
+  margin-left: 150px;
+  font-size: 3rem;
+  text-align: left;
+}
+
+.join-content p {
+  margin-left: 150px;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.join-section .btn.secondary1 {
+  padding: 0.5rem 1.5rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 50px;
+}
+
+.join-section .btn.secondary1:hover {
+  background-color: darkorange;
+}

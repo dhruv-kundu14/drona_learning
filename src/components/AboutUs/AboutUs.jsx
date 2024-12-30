@@ -5,39 +5,41 @@ import Footer from "../Footer/Footer";
 const AboutUs = () => {
   const [hovered, setHovered] = useState(null);
 
-   useEffect(() => {
-      // Function to handle scroll event
-      const handleScroll = () => {
-        const scrollY = window.scrollY; // Get scroll position
-        const imageContainer = document.querySelector(".about-image-container");
-  
-        // Calculate opacity based on scroll position
-        const opacity = 1 - scrollY / 500; // Adjust 500 to control how fast it disappears
-        if (opacity >= 0) {
-          imageContainer.style.opacity = opacity; // Set opacity dynamically
-        }
-      };
-  
-      // Attach scroll event listener
-      window.addEventListener("scroll", handleScroll);
-  
-      // Clean up the event listener on component unmount
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
+  useEffect(() => {
+    // Function to handle scroll event
+    const handleScroll = () => {
+      const scrollY = window.scrollY; // Get scroll position
+      const imageContainer = document.querySelector(".about-image-container");
+
+      // Calculate opacity based on scroll position
+      const opacity = 1 - scrollY / 500; // Adjust 500 to control how fast it disappears
+      if (opacity >= 0) {
+        imageContainer.style.opacity = opacity; // Set opacity dynamically
+      }
+    };
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const founders = [
     {
       id: 1,
-      image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder1.jpg", // Replace with actual image paths
+      image:
+        "https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder1.jpg", // Replace with actual image paths
       name: "Dr. Abhilasha",
       title: "Co - Founder",
       description: "A Scientist with a passion for teaching.",
     },
     {
       id: 2,
-      image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder2.jpeg",
+      image:
+        "https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder2.jpeg",
       name: "Dr. Jayanti Datta",
       title: "Co - Founder",
       description:
@@ -47,23 +49,19 @@ const AboutUs = () => {
 
   return (
     <>
-     
-     
- 
-       <div className="about-testSeries-section">
+      <div className="about-testSeries-section">
         <div className="about-wrapper"></div>
-       <div className="about-image-container"></div>
-          <img
-            src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg"
-            alt="Background"
-            className="about-testSeries-image"
-          />
-          <div className="about-testSeries-content">
-            <h1>About Us</h1>
-            <p>Get To Know Us.</p>
-          </div>
+        <div className="about-image-container"></div>
+        <img
+          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg"
+          alt="Background"
+          className="about-testSeries-image"
+        />
+        <div className="about-testSeries-content">
+          <h1>About Us</h1>
+          <p>Get To Know Us.</p>
         </div>
-     
+      </div>
 
       {/* Personalized Focus Section */}
       <div className="personalized-about-section">
@@ -97,8 +95,14 @@ const AboutUs = () => {
         <div className="about-images">
           {/* Right images (stacked vertically) */}
           <div className="right-images">
-            <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/About/about5.jpg" alt="Library" />
-            <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/About/about6.jpg" alt="Teamwork" />
+            <img
+              src="https://dhruv-kundu14.github.io/drona_learning/Icons/About/about5.jpg"
+              alt="Library"
+            />
+            <img
+              src="https://dhruv-kundu14.github.io/drona_learning/Icons/About/about6.jpg"
+              alt="Teamwork"
+            />
           </div>
           {/* Left image (full-length) */}
           <img
@@ -108,7 +112,7 @@ const AboutUs = () => {
           />
         </div>
       </div>
-      
+
       <div className="info-container">
         <div className="info-section">
           <h2>Our Goals</h2>
