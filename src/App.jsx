@@ -109,11 +109,11 @@ const MainContent = () => {
       {/* Conditionally render Navbar or Nav2 based on the current route */}
       {isCartPage || isProductPage || isCoursePage ? <Nav2 /> : <Navbar />}
       <Routes>
-        <Route path="/drona_learning" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/home" element={<CourseCard />} />
         <Route path="/course/:courseId" element={<CoursePage />} />
-        <Route path="/" element={<ProductList products={products} />} />
+        <Route path="/our-courses" element={<ProductList products={products} />} />
         <Route path="/cart" element={<CartDetail />} />
         <Route path="/product/:productId" element={<ProductDetails />} />
         <Route path="/selflearning" element={<SelfLearning />} />
