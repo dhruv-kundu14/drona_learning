@@ -81,31 +81,24 @@ const Sidebar = ({ onFilter }) => {
           {isProductTypeOpen && (
             <div className="filter-options">
               <div>
-                <input
-                  type="checkbox"
-                  id="basic"
-                  checked={selectedFilters.includes("Basic")}
-                  onChange={() => handleCheckboxChange("Basic")}
-                />
-                <label htmlFor="basic">Basic</label>
-              </div>
-              <div>
+              <label htmlFor="standard">Standard</label>
                 <input
                   type="checkbox"
                   id="standard"
                   checked={selectedFilters.includes("Standard")}
                   onChange={() => handleCheckboxChange("Standard")}
                 />
-                <label htmlFor="standard">Standard</label>
+                
               </div>
               <div>
+              <label htmlFor="advanced">Advanced</label>
                 <input
                   type="checkbox"
                   id="advanced"
                   checked={selectedFilters.includes("Advanced")}
                   onChange={() => handleCheckboxChange("Advanced")}
                 />
-                <label htmlFor="advanced">Advanced</label>
+              
               </div>
             </div>
           )}

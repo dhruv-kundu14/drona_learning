@@ -81,16 +81,29 @@
 }
 
 .filter-options div {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 10px; /* Add consistent spacing between checkbox and label */
+  margin-bottom: 15px; /* Space between filter items */
+  padding: 10px; /* Add padding for a balanced look */
+  border-radius: 5px; /* Rounded edges */
+  background-color: #f9f9f9; /* Subtle background color */
+  border: 1px solid #ddd; /* Light border for separation */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.filter-options input[type="checkbox"] {
+  transform: scale(1.2); /* Make checkboxes larger */
+  cursor: pointer;
 }
 
 .filter-options label {
-  margin-left: 5px;
-  font-size: 14px;
-  color: #333;
+  font-size: 16px; /* Standardized label size */
+  font-weight: 500; /* Medium weight for readability */
+  color: #333; /* Neutral color for text */
 }
 
-input[type="checkbox"] {
-  transform: scale(1.1);
-  cursor: pointer;
+.filter-options div:hover {
+  background-color: #f0f0f0; /* Slight hover effect */
+  border-color: #ccc; /* Slightly darker border on hover */
 }

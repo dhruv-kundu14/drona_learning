@@ -59,15 +59,20 @@ const ProductList = ({ products, filterName }) => {
     fname = "Test Series Packages";
   }
 
+  let fdesc = "All the skills you need in one place. Assisted Self Learning, Test Series Packages, and Worksheets for Class VI to XII for CBSE, ICSE, and State Syllabus.";
+  if(filterName === "ASLP") {
+    fdesc = "The Assisted Self-Learning Program (ASLP) at Drona Learning Academy is a unique educational approach designed to empower students through self-paced learning with the support of expert guidance";
+  }else if(filterName === "Test Series") {
+    fdesc = "Test Series Packages for class VI to XII";
+  }
+
   return (
     <div style={{ padding: "20px" }}>
       <Typography variant="h3" align="center">
         {fname || "Our Products"}
       </Typography>
       <Typography variant="h6" align="center" paragraph>
-        All the skills you need in one place. Assisted Self Learning, Test
-        Series Packages, and Worksheets for Class VI to XII for CBSE, ICSE, and
-        State Syllabus.
+      {fdesc || " All the skills you need in one place. Assisted Self Learning, Test Series Packages, and Worksheets for Class VI to XII for CBSE, ICSE, and State Syllabus."}
       </Typography>
       <Grid container spacing={3} justifyContent="center">
         {products.map((product) => (
