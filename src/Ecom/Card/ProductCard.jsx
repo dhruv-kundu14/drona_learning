@@ -62,18 +62,17 @@ import { useCart } from "../Cart/CartContext";
 import { ToastContainer, toast } from 'react-toastify';
 
 const ProductCard = ({ product }) => {
-  const navigate = useNavigate(); // Hook should be at the top level, unconditionally
+  const navigate = useNavigate();
   const { addToCart, removeFromCart, cart } = useCart();
 
-
-  const isInCart = cart.some((item) => item.id === product.id); // Check if product is in cart
+  const isInCart = cart.some((item) => item.id === product.id);
 
   // Handle the addition of the product to the cart
   const handleCart = () => {
     if (isInCart) {
-      removeFromCart(product.id); // Remove from cart if already added
+      removeFromCart(product.id);
     } else {
-      addToCart(product); // Add to cart if not already added
+      addToCart(product);
       toast("Item added to cart!");
     }
   };
@@ -84,10 +83,8 @@ const ProductCard = ({ product }) => {
   }
 
   const handleViewDetails = () => {
-    navigate(`/product/${product.id}`); // Navigate to the product details page
+    navigate(`/product/${product.id}`);
   };
-
-  
 
   return (
     <Card className="product-card">
@@ -115,7 +112,7 @@ const ProductCard = ({ product }) => {
           color="primary"
           onClick={handleCart}
         >
-          Add to Cart
+          {isInCart ? "Remove from Cart" : "Add to Cart"}
         </Button>
         <ToastContainer />
 

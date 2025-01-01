@@ -125,7 +125,7 @@
 .text-section p {
   margin-left: 50px;
   text-align: left;
-  font-size: 16px;
+  font-size: 18.5px;
   line-height: 1.8;
   margin-bottom: 20px;
   color: #1d0c3a;
@@ -339,13 +339,13 @@
 }
 
 .focus-content h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   color: navy;
 }
 
 .focus-content p {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -355,6 +355,7 @@
   background-color: orange;
   color: white;
   border: none;
+  margin-left: 110px;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
@@ -511,6 +512,11 @@
     text-align: center;
     background: rgba(22, 36, 103, 0.5);
     border-radius: 10px;
+  }
+
+  .testSeries-content p{
+    margin-left: 150px;
+    margin-right: 150px;
   }
 
 /* Responsive styles */

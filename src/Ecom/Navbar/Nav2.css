@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   background-image:linear-gradient(to right, rgb(239, 151, 247) , rgb(253, 167, 62)); /* Purple */
   color: #fff;
   font-family: 'Arial', sans-serif;
@@ -37,7 +37,12 @@
   display: flex;
   gap: 2rem;
   list-style: none;
+  margin-left: auto; /* This pushes the navigation links to the right */
+  margin-right: 20px;
+  margin-top: 10px;
+  text-align: right;
 }
+
 
 .nav2-links li a {
   color: #fff;
@@ -171,7 +176,7 @@
   .nav2-links {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 100px;
     right: 0;
     background: rgba(0, 0, 0, 0.9);
     flex-direction: column;

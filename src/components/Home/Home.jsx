@@ -3,9 +3,22 @@ import Footer from "../Footer/Footer";
 import Dashboard from "../Home/Dashboard";
 import Testimonial from "../Home/Testimonial";
 import "../../App.css"; // Ensure this path is correct for your CSS file
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const handleTest1 = () => {
+    navigate(`/course/aslp#TEST`);
+  };
+
+  const handleTest2 = () => {
+    navigate(`/about`);
+  };
+
+  const handleTest3 = () => {
+    navigate(`/contact`);
+  };
+
   useEffect(() => {
     // Function to handle scroll event
     const handleScroll = () => {
@@ -36,35 +49,38 @@ const HeroSection = () => {
           <div className="image-container"></div>
           <div class="hero-container">
             <div class="text-section">
-              <h3>LEARN HOW TO LEARN</h3>
-              <h1>Enhance the Self-Learning Capability in Your Child</h1>
+              <h3>Unlock the Secrets to Lifelong Learning</h3>
+              <h1>✨ Master the Art of Self-Learning ✨</h1>
               <p>
-                <strong>Drona Learning Academy</strong> is dedicated to
-                delivering high-quality education through
-                <strong>innovative teaching methodologies</strong> and
-                <strong>personalized learning experiences</strong>. Our
-                carefully designed educational programs are tailored to not only
-                promote
-                <strong>academic excellence</strong> but also nurture
-                <strong>holistic development</strong>, empowering students to
-                thrive both inside and outside the classroom.
+                At <strong>Drona Learning Academy</strong>, we don’t just
+                teach—we empower! Discover how to harness the power of
+                curiosity, cultivate a growth mindset, and transform the way
+                your child approaches learning. With our innovative methods,
+                your child will gain not only knowledge but also the tools to
+                become an independent, confident learner for life.
+                <br />
+                <strong>
+                  {" "}
+                  Start your journey with us today and learn how to learn—unlock
+                  the key to endless possibilities! 🚀
+                </strong>
               </p>
 
-              <button class="cta-button">Test Series</button>
+              <button class="cta-button" onClick={handleTest1}>
+                Test Series
+              </button>
             </div>
             <div class="image-section">
-            <img
-  src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png"
-  alt="Top section of the website with a hero banner"
-  className="top-image"
-/>
-<img
-  src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.png"
-  alt="Bottom section of the website with a hero banner"
-  className="bottom-image"
-/>
-
-
+              <img
+                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png"
+                alt="Top section of the website with a hero banner"
+                className="top-image"
+              />
+              <img
+                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.png"
+                alt="Bottom section of the website with a hero banner"
+                className="bottom-image"
+              />
             </div>
           </div>
         </div>
@@ -90,14 +106,16 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="focus-content">
-          <h2>Focus on each child is personalized.</h2>
+          <h2>Personalized Attention for Every Child</h2>
           <p>
-            With our group of extremely passionate, highly educated, experienced
-            teachers, and vast research, we have designed unique methods of
-            teaching for each subject, and our focus on every student is
-            personalized.
+            At <strong>Drona Learning Academy</strong>, we provide personalized
+            education through our team of passionate, experienced teachers. With
+            research-backed, subject-specific methods, we ensure every student
+            receives the individual attention they need to thrive.
           </p>
-          <button className="btn primary">→ About us</button>
+          <button className="btn primary" onClick={handleTest2}>
+            → About us
+          </button>
         </div>
       </div>
 
@@ -133,7 +151,9 @@ const HeroSection = () => {
             intervals as it helps to determine learning gaps, improves knowledge
             retention, boosts checking abilities, and minimizes careless errors.
           </p>
-          <button className="btn secondary">Enquire Now</button>
+          <button className="btn secondary" onClick={handleTest3}>
+            Enquire Now
+          </button>
         </div>
       </div>
 

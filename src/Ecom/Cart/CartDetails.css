@@ -1,0 +1,112 @@
+/* General Box Styling */
+.cart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Left Section - Cart Details */
+.cart-details {
+  flex: 2;
+  margin-right: 24px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.cart-item-image {
+  border-radius: 8px;
+  margin-right: 16px;
+  width: 100px;
+  height: 100px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-size: 1rem;
+}
+
+.cart-item-price {
+  text-decoration: line-through;
+  color: #9e9e9e;
+  font-size: 0.875rem;
+}
+
+.cart-item-actual-price {
+  color: #3f51b5;
+  font-size: 1.25rem;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-actions button {
+  padding: 4px 12px;
+  font-size: 1rem;
+}
+
+.cart-item-total-price {
+  margin-left: 16px;
+  font-size: 1.25rem;
+}
+
+.cart-item-remove {
+  margin-left: 16px;
+}
+
+.cart-empty-message {
+  margin-top: 16px;
+  color: #9e9e9e;
+}
+
+/* Order Summary Section */
+.order-summary {
+  flex: 1;
+}
+
+.order-summary .subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.order-summary .checkout-button {
+  padding: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #3f51b5;
+  color: white;
+}
+
+.order-summary .checkout-secure {
+  font-size: 0.875rem;
+  color: #9e9e9e;
+  text-align: center;
+}
+
+/* Divider styling */
+.MuiDivider-root {
+  margin: 16px 0;
+}
+
+/* Typography and Button styling */
+.MuiTypography-root {
+  margin-bottom: 8px;
+}
+
+.MuiButton-root {
+  margin: 8px 0;
+}

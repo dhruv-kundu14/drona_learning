@@ -79,10 +79,12 @@ import ProductList from './Ecom/Card/ProductList.jsx';
 import ProductDetails from './Ecom/View/ViewDetail.jsx';
 import { products } from './Ecom/Card/data.js';
 import Nav2 from './Ecom/Navbar/Nav2.jsx';
+import Login from "./Ecom/Login_Register/Login.jsx";
+import Register from "./Ecom/Login_Register/Register.jsx";
 
 // Import CartProvider
 import { CartProvider } from './Ecom/Cart/CartContext.jsx'; // Adjust path accordingly
-import CartDetail from './Ecom/Cart/CartDetail.jsx';  
+import CartDetail from './Ecom/Cart/CartDetails.jsx';  
 
 const App = () => {
   return (
@@ -103,11 +105,13 @@ const MainContent = () => {
   const isCoursePage = location.pathname.startsWith("/course/");
   const isProductPage = location.pathname.startsWith("/product/");
   const isCartPage = location.pathname.startsWith("/cart")
-
-  return (
+  const isLoginPage = location.pathname === "/login"; 
+  const isRegisterPage = location.pathname === "/register";
+    return (
     <>
       {/* Conditionally render Navbar or Nav2 based on the current route */}
-      {isCartPage || isProductPage || isCoursePage ? <Nav2 /> : <Navbar />}
+      {!isLoginPage && !isRegisterPage && (isCartPage || isProductPage || isCoursePage ? <Nav2 /> : <Navbar />)}
+
       <Routes>
         <Route path="/drona_learning" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
@@ -115,6 +119,8 @@ const MainContent = () => {
         <Route path="/course/:courseId" element={<CoursePage />} />
         <Route path="/" element={<ProductList products={products} />} />
         <Route path="/cart" element={<CartDetail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/product/:productId" element={<ProductDetails />} />
         <Route path="/selflearning" element={<SelfLearning />} />
         <Route path="/about" element={<AboutUs />} />
