@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Typography, IconButton, Button, TextField, Divider } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useLocation } from "react-router-dom";
+
 import "./CartDetails.css";
 
 const CartComponent = () => {

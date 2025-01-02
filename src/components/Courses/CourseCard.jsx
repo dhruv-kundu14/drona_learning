@@ -66,7 +66,7 @@ Concept-wise Practice Worksheets, Tests and more`,
               <p className="course-card-description">{card.description}</p>
               {/* Use Link component for navigation */}
               <Link to={card.link} className="course-card-link">
-                Click here
+                Explore Course
               </Link>
             </div>
           );

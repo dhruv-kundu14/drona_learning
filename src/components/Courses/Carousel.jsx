@@ -2,7 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import './Courses.css';
 
 const carouselItems = [
-  { id: 1, image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Background/2.png"},
+  { id: 1, image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Background/6.png"},
   { id: 2, image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Background/2.png" },
   { id: 3, image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Background/2.png "},
 ];

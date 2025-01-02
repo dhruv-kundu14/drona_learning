@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import CarouselFade from './Carousel'
 import CourseCard from './CourseCard'
 import Footer from "../Footer/Footer"
+import GotoButton from './GotoButton'
 
 const Courses = () => {
     useEffect(() => {
@@ -33,7 +34,7 @@ const Courses = () => {
       </div>
     <h1 className='courses-text'>See what you can learn with us</h1>
       <CourseCard />
-
+      <GotoButton />
       <Footer />
     </div>
   )

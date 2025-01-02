@@ -19,6 +19,10 @@ const HeroSection = () => {
     navigate(`/contact`);
   };
 
+  const handleCoursePage = () => {
+    navigate(`/courses`);
+  };
+
   useEffect(() => {
     // Function to handle scroll event
     const handleScroll = () => {
@@ -120,6 +124,20 @@ const HeroSection = () => {
       </div>
 
       {/* Carousel */}
+      {/* <div className="carousel-section">
+        <img
+          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/carousel.jpg"
+          alt="Background"
+          className="carousel-image"
+        />
+        <div className="carousel-content">
+          <h1>Our Courses</h1>
+          <p>
+            We ensure that the focus on each child is different, and tailor-made
+            just for them.
+          </p>
+        </div>
+      </div> */}
       <div className="carousel-section">
         <img
           src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/carousel.jpg"
@@ -132,6 +150,44 @@ const HeroSection = () => {
             We ensure that the focus on each child is different, and tailor-made
             just for them.
           </p>
+          <div className="card1-container">
+            <div className="card1">
+              <h2>ASLP(Assisted Self Learning Program)</h2>
+              <p>
+                A definitive worksheet-based course designed to excel in
+                examination. With comprehensive chapter-wise worksheets, test
+                papers, corrections and feedback by expert teachers , students
+                develop a solid grasp of mathematical concepts. This course
+                includes continuous study plan under expert guidance, ensuring
+                students master the curriculum while fostering a genuine
+                interest in Mathematics .
+              </p>
+            </div>
+            <div className="card1">
+              <h2>Test Series</h2>
+              <p>
+                Unlock your full potential with our meticulously designed Test
+                Series. With timed mock tests, practice exams, and topic-wise
+                quizzes, we help students sharpen their skills and gain
+                confidence for any exam. These test series are curated to mimic
+                real exam environments, allowing students to evaluate their
+                performance, identify areas for improvement, and track their
+                progress over time.
+              </p>
+            </div>
+            <div className="card1">
+              <h2>Live and Interactive Classes</h2>
+              <p>
+                Join our Live and Interactive Classes for a dynamic learning
+                experience. Led by expert instructors, these real-time sessions
+                offer opportunities for questions, discussions, and
+                collaboration with peers. Get instant feedback and personalized
+                guidance to master complex concepts and deepen your
+                understanding.
+              </p>
+            </div>
+          </div>
+          <button className="card1-button" onClick={handleCoursePage}>Explore Our Courses</button>
         </div>
       </div>
 

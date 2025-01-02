@@ -12,7 +12,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url('../../../public/Icons/Background/bg14.png'); 
+  background-image: url('../../../public/Icons/Background/bg12.png'); 
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: right; 
@@ -93,8 +93,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 85vh;
   position: relative;
+  background: linear-gradient(to right, rgba(218, 182, 249, 0.2), rgba(251, 206, 129, 0.2));
 }
 
 .course-card-container {
@@ -140,4 +141,92 @@
   font-size: 14px;
   color: #666;
   margin-bottom: 10px;
+}
+
+
+.goto-container {
+  background-color: rgba(197, 150, 239, 10); /* Purple background */
+  color: rgb(0, 0, 0);
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+}
+
+.goto-left {
+  flex: 1;
+  max-width: 40%;
+}
+
+.goto-right {
+  flex: 1;
+  max-width: 50%;
+}
+
+.goto-left h1 {
+  font-size: 3rem;
+  line-height: 1.4;
+  margin-left: 180px;
+}
+
+.goto-right p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  margin-right: 100px;
+}
+
+.goto-link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  padding-bottom: 2px;
+}
+
+.goto-link:hover {
+  text-decoration: underline;
+}
+
+.goto-animated-button {
+  display: flex;
+  align-items: center;
+  background-color: rgba(251, 212, 129, 0.7);
+  color: #4a1e87;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.goto-animated-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.goto-animated-button::after {
+  content: \"\";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.goto-animated-button:hover::after {
+  left: 100%;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
