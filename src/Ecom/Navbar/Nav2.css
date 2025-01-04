@@ -1,11 +1,9 @@
-
-
 .nav2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
-  background-image:linear-gradient(to right, rgb(239, 151, 247) , rgb(253, 167, 62)); /* Purple */
+  background-image: linear-gradient(to right, rgb(239, 151, 247), rgb(253, 167, 62)); /* Purple */
   color: #fff;
   font-family: 'Arial', sans-serif;
   position: relative;
@@ -43,7 +41,6 @@
   text-align: right;
 }
 
-
 .nav2-links li a {
   color: #fff;
   text-decoration: none;
@@ -59,6 +56,8 @@
 /* Right Login Icon */
 .nav2-login {
   position: relative;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -70,6 +69,24 @@
 
 .nav2-login img:hover {
   transform: scale(1.1);
+}
+
+/* When logged in, show the name or first letter */
+.nav2-login span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6c5ce7; /* Purple background for name or initial */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav2-login span:hover {
+  background-color: #5a4ecf; /* Darker purple on hover */
 }
 
 /* Updated Dropdown Styles */
@@ -165,7 +182,6 @@
 .nav2-login:focus-within img:after {
   transform: translateY(-50%) rotate(180deg);
 }
-
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -317,3 +333,33 @@
 .remove-button:hover {
   background-color: #ff2d2d;
 }
+
+/* Dropdown Container for Logout */
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  padding: 1rem;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 999;
+}
+
+/* Dropdown Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
