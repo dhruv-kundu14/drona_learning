@@ -115,6 +115,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(userData)); // Store the user object correctly
       setIsAuthenticated(true);
       setUser(userData);
+      
     } else {
       console.error("User data is undefined");
     }
