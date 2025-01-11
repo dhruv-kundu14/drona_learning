@@ -16,7 +16,7 @@ const RazorPage = () => {
       }
 
       // Create order in backend
-      const response = await axios.post("http://localhost:5000/create-order", {
+      const response = await axios.post("https://drona-backend-61ib.onrender.com/common-backend/payment/create-order", {
         amount: totalPrice, 
       });
 

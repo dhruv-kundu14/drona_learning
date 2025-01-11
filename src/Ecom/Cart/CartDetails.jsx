@@ -239,8 +239,8 @@ const CartComponent = () => {
       }
 
       // Create order in backend
-      const response = await axios.post("http://localhost:5000/create-order", {
-        amount: totalPrice, 
+      const response = await axios.post("https://drona-backend-61ib.onrender.com/common-backend/payment/create-order", {
+        amount: totalPrice * 100, 
       });
 
       const { id, currency, amount: orderAmount } = response.data;
@@ -250,7 +250,7 @@ const CartComponent = () => {
         key: process.env.RAZORPAY_KEY_ID, // Environment variable
         amount: orderAmount,
         currency,
-        name: "My App",
+        name: "Drona Learning",
         description: "Payment for your order",
         order_id: id,
         handler: function (response) {
@@ -314,19 +314,6 @@ const CartComponent = () => {
                   ₹{item.price.toFixed(2)}
                 </Typography>
               </Box>
-              {/* <Box className="cart-item-actions">
-                <Button variant="outlined" size="small">
-                  -
-                </Button>
-                <TextField
-                  value={item.quantity}
-                  size="small"
-                  sx={{ width: "50px", marginX: 1 }}
-                />
-                <Button variant="outlined" size="small">
-                  +
-                </Button>
-              </Box> */}
               <Typography variant="h6" className="cart-item-total-price">
                 ₹{(item.price * item.quantity).toFixed(2)}
               </Typography>
@@ -377,7 +364,7 @@ const CartComponent = () => {
 
           onClick={handlePayment}
         >
-          Checkout
+          Pay Now
         </Button>
         <Typography variant="caption" className="checkout-secure">
           🔒 Secure Checkout
