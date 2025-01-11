@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/drona_learning/static/css/main.d046ad56.css",
-    "main.js": "/drona_learning/static/js/main.736eb0b2.js",
+    "main.css": "/drona_learning/static/css/main.6eafed6e.css",
+    "main.js": "/drona_learning/static/js/main.049e0808.js",
     "static/media/fa-solid-900.ttf": "/drona_learning/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/fa-brands-400.ttf": "/drona_learning/static/media/fa-brands-400.1815e00441357e01619e.ttf",
     "static/media/fa-solid-900.woff2": "/drona_learning/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
@@ -15,11 +15,11 @@
     "static/media/fa-v4compatibility.ttf": "/drona_learning/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/drona_learning/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/drona_learning/index.html",
-    "main.d046ad56.css.map": "/drona_learning/static/css/main.d046ad56.css.map",
-    "main.736eb0b2.js.map": "/drona_learning/static/js/main.736eb0b2.js.map"
+    "main.6eafed6e.css.map": "/drona_learning/static/css/main.6eafed6e.css.map",
+    "main.049e0808.js.map": "/drona_learning/static/js/main.049e0808.js.map"
   },
   "entrypoints": [
-    "static/css/main.d046ad56.css",
-    "static/js/main.736eb0b2.js"
+    "static/css/main.6eafed6e.css",
+    "static/js/main.049e0808.js"
   ]
 }
