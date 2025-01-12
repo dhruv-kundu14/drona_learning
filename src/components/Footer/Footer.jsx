@@ -2,6 +2,8 @@ import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 
 export default function Footer() {
+  const baseUrl = process.env.REACT_APP_IMG_URL;
+
   return (
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
       {/* Social Media Section */}
@@ -35,7 +37,8 @@ export default function Footer() {
             <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
   <h6 className='text-uppercase fw-bold mb-4'>
     <img 
-      src="https://dhruv-kundu14.github.io/drona_learning/Icons/CompanyLogo/Drona.png" // Use your image URL here
+      // src="https://dhruv-kundu14.github.io/drona_learning/Icons/CompanyLogo/Drona.png"
+      src = {`${baseUrl}/Icons/CompanyLogo/Drona.png`}
       alt="Company logo" 
       className="me-3"
       width={200} // Set your image width here

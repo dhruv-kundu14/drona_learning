@@ -5,6 +5,9 @@ import Faq from './Faq'
 import Card from "./Card";
 
 const Careers = () => {
+
+  const baseUrl = process.env.REACT_APP_IMG_URL;
+
   useEffect(() => {
     // Function to handle scroll event
     const handleScroll = () => {
@@ -43,7 +46,7 @@ const Careers = () => {
         </div>
         <div className="image-right">
           <img
-            src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png"
+            src={`${baseUrl}/Icons/home/hero1.png`}
             alt="Career visual"
             className="section-image"
           />
@@ -60,7 +63,7 @@ const Careers = () => {
             allowFullScreen
           ></iframe> */}
            <img
-            src="https://dhruv-kundu14.github.io/drona_learning/Icons/career/c1.jpeg"
+            src={`${baseUrl}/Icons/career/c1.jpeg`}
             alt="Career visual"
             className="section-image"
           />
@@ -84,7 +87,7 @@ const Careers = () => {
         </div>
         <div className="image-right">
           <img
-            src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.png"
+            src={`${baseUrl}/Icons/home/hero2.png`}
             alt="Group of educators collaborating"
             className="section-image"
           />

@@ -6,6 +6,8 @@ import "../../App.css"; // Ensure this path is correct for your CSS file
 import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const baseUrl = process.env.REACT_APP_IMG_URL;
+
   const navigate = useNavigate();
   const handleTest1 = () => {
     navigate(`/course/aslp#TEST`);
@@ -76,12 +78,14 @@ const HeroSection = () => {
             </div>
             <div class="image-section">
               <img
-                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png"
+                // src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero1.png"
+                src={`${baseUrl}/Icons/home/hero1.png`}
                 alt="Top section of the website with a hero banner"
                 className="top-image"
               />
               <img
-                src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.png"
+                // src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/hero2.png"
+                src={`${baseUrl}/Icons/home/hero2.png`}
                 alt="Bottom section of the website with a hero banner"
                 className="bottom-image"
               />
@@ -94,17 +98,20 @@ const HeroSection = () => {
       <div className="personalized-focus-section">
         <div className="focus-images">
           <img
-            src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about1.jpg"
+            // src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about1.jpg"
+            src={`${baseUrl}/Icons/home/about1.jpg`}
             alt="Student studying"
             className="left-image"
           />
           <div className="right-images">
             <img
-              src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about2.jpg"
+              // src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about2.jpg"
+              src={`${baseUrl}/Icons/home/about2.jpg`}
               alt="Library"
             />
             <img
-              src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about3.jpg"
+              // src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/about3.jpg"
+              src={`${baseUrl}/Icons/home/about3.jpg`}
               alt="Teamwork"
             />
           </div>
@@ -140,7 +147,8 @@ const HeroSection = () => {
       </div> */}
       <div className="carousel-section">
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/carousel.jpg"
+          // src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/carousel.jpg"
+          src={`${baseUrl}/Icons/home/carousel.jpg`}
           alt="Background"
           className="carousel-image"
         />
@@ -196,7 +204,8 @@ const HeroSection = () => {
       {/* Test Series Section */}
       <div className="testSeries-section">
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg"
+          // src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg"
+          src={`${baseUrl}/Icons/home/structure.jpg`}
           alt="Background"
           className="testSeries-image"
         />
@@ -219,7 +228,8 @@ const HeroSection = () => {
         <div className="founders">
           <div className="founder">
             <img
-              src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder1.jpg"
+              // src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder1.jpg"
+              src={`${baseUrl}/Icons/Founders/founder1.jpg`}
               alt="Dr. Abhilasha"
               className="founder-image"
             />
@@ -229,7 +239,8 @@ const HeroSection = () => {
           </div>
           <div className="founder">
             <img
-              src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder2.jpeg"
+              // src="https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder2.jpeg"
+              src={`${baseUrl}/Icons/Founders/founder2.jpeg`}
               alt="Dr. Jayanti Datta"
               className="founder-image"
             />

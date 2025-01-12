@@ -2,25 +2,23 @@ import React, { useState } from "react";
 import "./Careers.css";
 
 const Card = () => {
+  const baseUrl = process.env.REACT_APP_IMG_URL;
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const cards = [
     {
       title: "Math",
-      image:
-        "https://dhruv-kundu14.github.io/drona_learning/Icons/career/math.png",
+      image: `${baseUrl}/Icons/career/math.png`,
       description: `Mathematics teachers at Drona Learning inspire grades 6-12 with engaging, personalized lessons, fostering critical thinking and strong foundations in CBSE, ICSE, and IGCSE curricula.`,
     },
     {
       title: "Science",
-      image:
-        "https://dhruv-kundu14.github.io/drona_learning/Icons/career/science.png",
+      image: `${baseUrl}/Icons/career/science.png`,
       description: `Science teachers at Drona Learning ignite curiosity in grades 6-12 through interactive, personalized lessons, building strong foundations in CBSE, ICSE, and IGCSE curricula.`,
     },
     {
         title: "Assisted Self Learning (ASLP)",
-        image:
-          "https://dhruv-kundu14.github.io/drona_learning/Icons/career/learning.png",
+        image: `${baseUrl}/Icons/career/learning.png`,
         description: `The Assisted Self-Learning Program (ASLP) at Drona Learning Academy is a unique educational approach designed to empower students through self-paced learning with the support of expert guidance.`
     }
   ];

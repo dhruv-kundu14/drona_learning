@@ -3,6 +3,9 @@ import "./AboutUs.css";
 import Footer from "../Footer/Footer";
 
 const AboutUs = () => {
+
+  const baseUrl = process.env.REACT_APP_IMG_URL;
+
   const [hovered, setHovered] = useState(null);
 
    useEffect(() => {
@@ -30,14 +33,16 @@ const AboutUs = () => {
   const founders = [
     {
       id: 1,
-      image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder1.jpg", // Replace with actual image paths
+      // image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder1.jpg",
+      image: `${baseUrl}/Icons/Founders/founder1.jpg`,
       name: "Dr. Abhilasha",
       title: "Co - Founder",
       description: "A Scientist with a passion for teaching.",
     },
     {
       id: 2,
-      image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder2.jpeg",
+      // image: "https://dhruv-kundu14.github.io/drona_learning/Icons/Founders/founder2.jpeg",
+      image: `${baseUrl}/Icons/Founders/founder2.jpeg`,
       name: "Dr. Jayanti Datta",
       title: "Co - Founder",
       description:
@@ -54,7 +59,8 @@ const AboutUs = () => {
         <div className="about-wrapper"></div>
        <div className="about-image-container"></div>
           <img
-            src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg"
+            // src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg"
+            src={`${baseUrl}/Icons/home/structure.jpg`}
             alt="Background"
             className="about-testSeries-image"
           />
@@ -97,12 +103,13 @@ const AboutUs = () => {
         <div className="about-images">
           {/* Right images (stacked vertically) */}
           <div className="right-images">
-            <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/About/about5.jpg" alt="Library" />
-            <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/About/about6.jpg" alt="Teamwork" />
+            <img src={`${baseUrl}/Icons/About/about5.jpg`} alt="Library" />
+            
+            <img src={`${baseUrl}/Icons/About/about6.jpg`} alt="Teamwork" />
           </div>
           {/* Left image (full-length) */}
           <img
-            src="https://dhruv-kundu14.github.io/drona_learning/Icons/About/about4.jpg"
+           src={`${baseUrl}/Icons/About/about4.jpg`}
             alt="Student studying"
             className="left-image"
           />
@@ -243,7 +250,8 @@ const AboutUs = () => {
 
       <div className="join-section">
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg" // Ensure this path points to the public folder
+          // src="https://dhruv-kundu14.github.io/drona_learning/Icons/home/structure.jpg" // Ensure this path points to the public folder
+          src={`${baseUrl}/Icons/home/structure.jpg`}
           alt="Background"
           className="join-image"
         />

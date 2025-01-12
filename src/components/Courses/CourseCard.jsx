@@ -3,28 +3,26 @@ import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./Courses.css";
 
 const CourseCard = () => {
+  const baseUrl = process.env.REACT_APP_IMG_URL;
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const cards = [
     {
       title: "Assisted Self Learning (ASLP)",
-      image:
-        "https://dhruv-kundu14.github.io/drona_learning/Icons/career/math.png",
+      image: `${baseUrl}/Icons/career/math.png`,
       description: `For classes VI to X -
 Concept-wise Practice Worksheets, Tests and more`,
       link: "/course/aslp#ASLP" // Example of the route for the course
     },
     {
       title: "Test Series",
-      image:
-        "https://dhruv-kundu14.github.io/drona_learning/Icons/career/science.png",
+      image: `${baseUrl}/Icons/career/science.png`,
       description: `Comprehensive routine tests conducted by Drona Teachers aligned with the latest CBSE curriculum and more`,
       link: "/course/aslp#TEST" // Another route for the course
     },
     {
       title: "Live Interactive Classes",
-      image:
-        "https://dhruv-kundu14.github.io/drona_learning/Icons/career/learning.png",
+      image: `${baseUrl}/Icons/career/learning.png`,
       description: `Concept based teaching by our expert educators to bridge learning gaps and to build 
       strong foundations and concepts of the subjects and more…`,
       link: "/course/live-classes" // Another route for the course

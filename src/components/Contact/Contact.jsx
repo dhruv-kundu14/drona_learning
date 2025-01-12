@@ -7,6 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
+  const baseUrl = process.env.REACT_APP_IMG_URL;
   const form = useRef();
 
   // Manage form data state
@@ -54,10 +55,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_chhlto9", // Replace with your EmailJS Service ID
-        "template_hvlf9ye", // Replace with your EmailJS Template ID
+        process.env.REACT_APP_SERVICE_ID,          
+        process.env.REACT_APP_TEMPLATE_ID2,
         form.current,
-        "6G3bip3AbmyowHBk9" // Replace with your EmailJS Public Key
+        process.env.REACT_APP_USER_ID,
       )
       .then(
         () => {
@@ -127,7 +128,7 @@ const Contact = () => {
           </div>
           <div className="image-right">
             <img
-              src="https://dhruv-kundu14.github.io/drona_learning/Icons/Background/communicate.png"
+              src={`${baseUrl}/Icons/Background/communicate.png`}
               alt="Career visual"
               className="section-image"
             />

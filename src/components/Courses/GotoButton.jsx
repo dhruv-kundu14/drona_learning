@@ -1,9 +1,13 @@
 import React from "react";
 import "./Courses.css"; // Create a separate CSS file for styling
+import { useNavigate } from "react-router-dom"; 
 
 const GotoButton = () => {
+  const baseUrl = process.env.REACT_APP_IMG_URL;
+const navigate = useNavigate();
+
   const handleButtonClick = () => {
-    window.location.href = "/course/aslp#P"; // Replace with your desired URL or route
+    navigate(`/course/aslp#P`)
   };
 
   return (
@@ -27,7 +31,9 @@ const GotoButton = () => {
           explored!
         </p>
         <button className="goto-animated-button" onClick={handleButtonClick}>
-          <img src="https://dhruv-kundu14.github.io/drona_learning/Icons/Ecom/cart.png" alt="icon" className="button-icon" />
+          <img 
+          src = {`${baseUrl}/Icons/Ecom/cart.png`}
+           alt="icon" className="button-icon" />
           Buy a Course  
         </button>
       </div>

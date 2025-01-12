@@ -1,13 +1,21 @@
+// filepath: /D:/Personal Project/Drona Learning Solution/drona_learning/src/components/Home/Dashboard.jsx
 import React from "react";
 import { Grid, Paper, Typography, Box } from "@mui/material";
 
 const Dashboard = () => {
+  const baseUrl = process.env.REACT_APP_IMG_URL;
+  
+
+  if (!baseUrl) {
+    console.error("REACT_APP_IMG_URL is not defined");
+  }
+
   const accountItems = [
     {
       title: "Extremely Passionate Team",
       icon: (
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/like.png"
+          src={`${baseUrl}/Icons/Detail/like.png`}
           alt="Passionate team icon"
           style={{
             width: "50px",
@@ -25,7 +33,8 @@ const Dashboard = () => {
       title: "Highly Educated Teachers",
       icon: (
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/education.png"
+          // src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/education.png"
+          src={`${baseUrl}/Icons/Detail/education.png`}
           alt="Highly educated teachers icon"
           style={{
             width: "50px",
@@ -43,7 +52,8 @@ const Dashboard = () => {
       title: "Widely Experienced Faculty",
       icon: (
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/globe.png"
+          // src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/globe.png"
+          src={`${baseUrl}/Icons/Detail/globe.png`}
           alt="Experienced faculty icon"
           style={{
             width: "50px",
@@ -61,7 +71,8 @@ const Dashboard = () => {
       title: "Unique Teaching Methodology",
       icon: (
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/presentation.png"
+          // src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/presentation.png"
+          src={`${baseUrl}/Icons/Detail/presentation.png`}
           alt="Teaching methodology icon"
           style={{
             width: "50px",
@@ -79,7 +90,8 @@ const Dashboard = () => {
       title: "Personalized Attention on Students",
       icon: (
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/dart-board.png"
+          // src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/dart-board.png"
+          src={`${baseUrl}/Icons/Detail/dart-board.png`}
           alt="Personalized attention icon"
           style={{
             width: "50px",
@@ -97,7 +109,8 @@ const Dashboard = () => {
       title: "Self Learning",
       icon: (
         <img
-          src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/reading-book.png"
+          // src="https://dhruv-kundu14.github.io/drona_learning/Icons/Detail/reading-book.png"
+          src={`${baseUrl}/Icons/Detail/reading-book.png`}
           alt="Self-learning icon"
           style={{
             width: "50px",

@@ -50,10 +50,10 @@ const SelfLearning = () => {
 
     emailjs
       .sendForm(
-        "service_chhlto9", // Replace with your EmailJS Service ID
-        "template_ur7fqqb", // Replace with your EmailJS Template ID
+        process.env.REACT_APP_SERVICE_ID,          
+        process.env.REACT_APP_TEMPLATE_ID1,
         form.current,
-        "6G3bip3AbmyowHBk9" // Replace with your EmailJS Public Key
+        process.env.REACT_APP_USER_ID,      
       )
       .then(
         () => {
