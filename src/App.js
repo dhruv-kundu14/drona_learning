@@ -86,6 +86,7 @@
   // Import CartProvider
   import { CartProvider } from './Ecom/Cart/CartContext.jsx'; // Adjust path accordingly
   import CartDetail from './Ecom/Cart/CartDetails.jsx';  
+  import BuyingHistory from './Ecom/Cart/BuyingHistory.jsx';
 
   const App = () => {
     return (
@@ -125,6 +126,7 @@
           <Route path="/cart" element={<CartDetail />} />
           <Route path="/checkout" element={<RazorPage />} />
           <Route path ="/success" element={<Success />} />
+          <Route path ="/history" element={<BuyingHistory />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/product/:productId" element={<ProductDetails />} />

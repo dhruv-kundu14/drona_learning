@@ -1,0 +1,91 @@
+.buying-history-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .history-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .history-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .history-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 16px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .history-item-details {
+    flex: 1;
+  }
+  
+  .history-item-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .history-item-date,
+  .history-item-price,
+  .history-item-quantity {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 4px;
+  }
+  
+  .history-item-date {
+    font-style: italic;
+  }
+  
+  .history-item-price {
+    color: #f37254;
+    font-weight: 500;
+  }
+  
+  .history-item-quantity {
+    color: #2e7d32;
+  }
+  
+  .typography {
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .buying-history-container {
+      padding: 16px;
+    }
+  
+    .history-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .history-item-image {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 12px;
+    }
+  
+    .history-item-details {
+      width: 100%;
+    }
+  }
+  

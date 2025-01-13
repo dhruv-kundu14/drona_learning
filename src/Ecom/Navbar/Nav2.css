@@ -162,6 +162,15 @@
   border-radius: 50%;
 }
 
+.dropdown-button{
+  background-color: #ff965e;
+  color: white;
+  margin-top: 10px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
 /* Smooth Transition for Dropdown */
 .nav2-login img {
   position: relative;
@@ -324,6 +333,14 @@
 
 .remove-button {
   background-color: #ff5e5e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cart-button{
+  background-color: #94ff5e;
   color: white;
   border: none;
   padding: 5px 10px;

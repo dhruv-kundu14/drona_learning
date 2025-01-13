@@ -29,14 +29,6 @@ const CartComponent = () => {
     setCart(updatedCart);
   };
 
-  // const handleCheckout = () => {
-  //   const totalPrice = cart.reduce((total, item) => {
-  //     const itemPrice = item.price * item.quantity;
-  //     return total + itemPrice;
-  //   }, 0);
-
-  //   navigate("/checkout", { state: { cart, totalPrice } });
-  // };
 
   // Apply promo code and calculate discount
   
@@ -59,44 +51,135 @@ const CartComponent = () => {
     return 0; // No discount
   };
 
+  // const handlePayment = async () => {
+
+  //   try {
+  //   const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  //   console.log("Backend URL:", backendUrl);
+
+
+  //     // Check if Razorpay SDK is loaded
+  //     if (!window.Razorpay) {
+  //       alert("Razorpay SDK failed to load. Please refresh the page.");
+  //       return;
+  //     }
+
+  //     // Create order in backend
+  //     // const response = await axios.post("https://drona-backend-61ib.onrender.com/common-backend/payment/create-order", {
+  //     //   amount: totalPrice * 100, 
+  //     // });
+
+  //     const response = await axios.post(`${backendUrl}/common-backend/payment/create-order`, {
+  //       amount: totalPrice * 100,
+  //     });
+
+  //     const { id, currency, amount: orderAmount } = response.data;
+
+  //     // Razorpay options
+  //     const options = {
+  //       key: process.env.RAZORPAY_KEY_ID, // Environment variable
+  //       amount: orderAmount,
+  //       currency,
+  //       name: "Drona Learning",
+  //       description: "Payment for your order",
+  //       order_id: id,
+  //       handler: function (response) {
+  //         alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+  //         navigate("/success", { state: { cart, totalPrice } });
+  //       },
+  //       prefill: {
+  //         name: "John Doe",
+  //         email: "johndoe@example.com",
+  //         contact: "1234567890",
+  //       },
+  //       notes: {
+  //         cartDetails: JSON.stringify(cart),
+  //       },
+  //       theme: {
+  //         color: "#F37254",
+  //       },
+  //     };
+
+  //     // Open Razorpay payment modal
+  //     const rzp = new window.Razorpay(options);
+  //     rzp.open();
+  //   } catch (error) {
+  //     console.error("Payment Error:", error);
+  //     alert("An error occurred while processing the payment. Please try again.");
+  //   }
+  // };
+  
   const handlePayment = async () => {
-
     try {
-    const backendUrl = process.env.REACT_APP_BACKEND_URL;
-    console.log("Backend URL:", backendUrl);
-
-
+      // Temporarily set userId in localStorage for testing
+      localStorage.setItem("userId", "temporaryUserId123");
+  
+      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  
+      if (!backendUrl) {
+        throw new Error("Backend URL is not set in the environment variables.");
+      }
+  
       // Check if Razorpay SDK is loaded
       if (!window.Razorpay) {
         alert("Razorpay SDK failed to load. Please refresh the page.");
         return;
       }
-
-      // Create order in backend
-      // const response = await axios.post("https://drona-backend-61ib.onrender.com/common-backend/payment/create-order", {
-      //   amount: totalPrice * 100, 
-      // });
-
-      const response = await axios.post(`${backendUrl}/common-backend/payment/create-order`, {
-        amount: totalPrice * 100,
+  
+      // Create order in the backend
+      const orderResponse = await axios.post(`${backendUrl}/common-backend/payment/create-order`, {
+        amount: Math.round(totalPrice * 100), // Convert amount to smallest currency unit (e.g., paise)
       });
-
-      const { id, currency, amount: orderAmount } = response.data;
-
-      // Razorpay options
+  
+      const { id, currency, amount: orderAmount } = orderResponse.data;
+  
+      // Razorpay payment options
       const options = {
         key: process.env.RAZORPAY_KEY_ID, // Environment variable
         amount: orderAmount,
         currency,
         name: "Drona Learning",
         description: "Payment for your order",
-        order_id: id,
-        handler: function (response) {
+        order_id: id,// Pass order ID received from backend
+        handler: async function (response) {
+          // Payment was successful
           alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
-          navigate("/success", { state: { cart, totalPrice } });
+  
+          try {
+            // Save buying history to the backend
+            await axios.post(`${backendUrl}/common-backend/api/purchase-history`, {
+              userId: localStorage.getItem("userId"), // Get the temporary userId
+              items: cart.map((item) => ({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                quantity: item.quantity,
+                purchaseDate: new Date().toISOString(),
+                image: item.image,
+              })),
+            });
+  
+            console.log("Purchase History Request Payload:", {
+              userId: localStorage.getItem("userId"),
+              items: cart.map((item) => ({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                quantity: item.quantity,
+                purchaseDate: new Date().toISOString(),
+                image: item.image,
+              })),
+            });
+  
+            // Navigate to the success page
+            navigate("/success", { state: { cart, totalPrice } });
+          } catch (historyError) {
+            console.error("Failed to save buying history:", historyError);
+            alert("Payment was successful, but we couldn't save your purchase history. Please contact support.");
+          }
         },
         prefill: {
-          name: "John Doe",
+          name: "John Doe", // Replace with dynamic user data if available
           email: "johndoe@example.com",
           contact: "1234567890",
         },
@@ -104,18 +187,27 @@ const CartComponent = () => {
           cartDetails: JSON.stringify(cart),
         },
         theme: {
-          color: "#F37254",
+          color: "#F37254", // Brand color
         },
       };
-
+  
       // Open Razorpay payment modal
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch (error) {
       console.error("Payment Error:", error);
-      alert("An error occurred while processing the payment. Please try again.");
+  
+      if (error.response) {
+        console.error("Server Response:", error.response);
+        alert(`Server Error: ${error.response.data.message || "Unknown error occurred."}`);
+      } else {
+        console.error("Error Details:", error);
+        alert("An error occurred while processing the payment. Please try again.");
+      }
     }
   };
+  
+  
   
   const totalPrice = cart.reduce((total, item) => {
     const mathScienceDiscount = calculateMathScienceDiscount();

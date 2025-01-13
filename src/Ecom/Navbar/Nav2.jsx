@@ -26,6 +26,10 @@ const Navbar = () => {
     navigate(`/cart?data=${encodeURIComponent(JSON.stringify(cart))}`);
   };
 
+  const handleHistory = () => {
+    navigate("/history");
+  };
+
   // Toggle dropdown visibility
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
@@ -51,11 +55,11 @@ const Navbar = () => {
       {/* Center Links */}
       <ul className={`nav2-links ${isMenuOpen ? "active" : ""}`}>
         <li>
-          <a href="/course/aslp">DronaPlus</a>
+          <a href="/courses">DronaPlus</a>
         </li>
-        <li>
+        {/* <li>
           <a href="/about">Plans-N-Pricing</a>
-        </li>
+        </li> */}
         <li>
           <a href="/course/aslp#P">Buy-Course</a>
         </li>
@@ -100,16 +104,8 @@ const Navbar = () => {
                     </li>
                   ))}
                   {cart.length > 0 && (
-                    // <li>
-                    //   <a
-                    //     href={`/cart?data=${encodeURIComponent(
-                    //       JSON.stringify(cart)
-                    //     )}`}
-                    //   >
-                    //     View Cart
-                    //   </a>
-                    // </li>
-                    <button onClick={handleCartNavigation}>Go to Cart</button>
+               
+                    <button className="cart-button" onClick={handleCartNavigation}>Go to Cart</button>
                   )}
                 </ul>
               </div>
@@ -129,13 +125,12 @@ const Navbar = () => {
               {/* Dropdown for user options */}
               {isDropdownOpen && (
                 <div className="dropdown">
-                  <button className="dropdown-button">User Options</button>
+                  <button onClick={handleHistory} className="dropdown-button">Your Orders</button>
                   <div className="dropdown-content">
-                    <a href="/profile">Profile</a> {/* Link to profile page */}
-                    <a href="/user-history">User History</a>{" "}
-                    {/* Link to user history page */}
+                    
+                  
                     <button
-                      className="logout-button"
+                      className="dropdown-button"
                       onClick={handleLogoutClick}
                     >
                       Logout
