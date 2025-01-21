@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "./Register.css";
+import { useNavigate } from 'react-router-dom';
+
+
 const RegistrationForm = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,12 +34,14 @@ const RegistrationForm = () => {
     console.log('Form Data:', formData);
 
     try {
+      const backendUrl = process.env.REACT_APP_BACKEND_URL;
       const response = await axios.post(
-        'https://ecommerce-backend-59dz.onrender.com/common-backend/api/registerForm',
+        `${backendUrl}/common-backend/api/registerForm`,
         formData
       );
       console.log('Response:', response.data);
       alert('User has been registered successfully');
+      navigate('/login');
     } catch (error) {
       console.error('Error in registration:', error.response || error);
       alert('Failed to register user. Please try again.');

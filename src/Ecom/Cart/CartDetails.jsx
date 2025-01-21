@@ -112,7 +112,7 @@ const CartComponent = () => {
   const handlePayment = async () => {
     try {
       // Temporarily set userId in localStorage for testing
-      localStorage.setItem("userId", "temporaryUserId123");
+      // localStorage.setItem("userId", "temporaryUserId123");
   
       const backendUrl = process.env.REACT_APP_BACKEND_URL;
   
